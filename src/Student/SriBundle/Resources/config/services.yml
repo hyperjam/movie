@@ -1,0 +1,4 @@
+services:
+#    student_sri.example:
+#        class: Student\SriBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

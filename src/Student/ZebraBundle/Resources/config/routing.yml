@@ -1,0 +1,4 @@
+student_zebra:
+
+ resource: "@StudentZebraBundle/Controller"
+ type:     annotation

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+{% block stylesheets %} 
+ <link href=  "{{asset ('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+ <link href=  "{{asset ('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css')  }} " rel="stylesheet" />
+{% endblock %}
+
+{% block javascripts  %}   
+<script type="text/javascript" src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+<head>
+<title>{% block title %} {% endblock %}</title>
+<meta charset="UTF-8">
+ 
+</head>
+<body>
+
+<div class="container-fluid ">
+<nav role="navigation" class="navbar navbar-default navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar- header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="main" class="navbar-brand">Back</a>
+        </div>
+        <!-- Collection of nav links and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+             <ul class="nav navbar-nav">
+              
+                <li class="active">{% block navbarCollapse %}    {% endblock %}</li>
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+
+        <div class="header">
+            <strong><h1 id="header1">{% block header1 %} {% endblock %}</h1></strong>
+        </div>
+
+       <div class= "row">
+               <hr/>
+               <div class="col-xs-3" > 
+               <h4 class="text-info lead"> Brief summary about poem</h4>
+               <p class="text-justify text-info" id="paragraph">
+
+                Pan Tadeusz is an epic poem written in Polish by Adam Mickiewicz, first published in Paris in 1834. It is generally considered one of the greatest masterpieces of Polish literature and a national epic of Poland. Set during the Napoleonic era in a fictional idyllic village of Soplicowo somewhere in the former Grand Duchy of Lithuania, or in modern-day Belarus, the poem tells a story of litigation over ruins of an old castle between two noble families - Soplica and Horeszko - against the backdrop of an anticipated Franco-Russian war.
+
+                </p>
+               </div>
+ 
+                <div class="col-xs-9">
+                <h2>Text of the book</h2>
+                <blockquote>
+                <p class="lead text-justify" id="text">
+                
+                {% block text %}
+  
+                {% endblock %}   
+                         
+                </p>
+                 <small>Adam Mickiewicz <cite title="Source Title"></cite></small>
+                </blockquote>  
+                </div>
+      </div>
+	 
+	 
+
+
+
+<div class ="row">
+   <hr>
+   <div class="col-xs-1">
+   <h4 class="lead"> References</h4>
+   
+   
+   <form method=post action="{{ asset('bundles/tadeusz/comment.php') }}" enctype="multipart/form-data">
+           <input type="text" name="name" placeholder="Your name"><br/><br>
+           <textarea rows="6" name="comment" cols="90" placeholder="Type your reference here"></textarea>
+           <button type="submit" class="btn btn-large btn-success">Send</button>
+   </form>
+   </div>
+</div>
+
+
+ <hr>
+        <div class="row">
+            <div class="col-xs-12" >
+                <footer   style= "absolute" >
+                    <p>&copy; Copyright 2015 Postevka Anna</p>
+                </footer>
+            </div>
+        </div>
+</div>
+
+
+
+</body>
+</html>

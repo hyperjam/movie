@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>The Shrimp World</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/shrimps/css/shrimps.css')  }} " rel="stylesheet" /> 
+   {% endblock %}
+
+ </head>
+
+<body onLoad="popup()" style="background-color:#33CCCC">
+  <h1><strong/>The Shrimp World</h1>
+  <br/>
+<IMG STYLE="border: none;" SRC="http://ocean-noise.com/blog/wp-content/uploads/2011/09/Mantis-shrimp.jpg" ALT="ShrimpWorld2">
+<br/>
+
+ <h3 align="center">Navigate to see more about shrimps
+ <br/>
+ <br/>
+<a href="{{path ('tiger')}}">Tiger shrimp </a>
+<br/>
+<a href="{{path ('zebra')}}">Chinese zebra shrimp </a>
+<br/>
+<a href="{{path ('sri_lanka')}}">Sri lanka dwarf </a>
+</h3>
+{% block javascripts  %}    
+<script type="text/javascript" src="{{ asset('bundles/shrimps/js/shrimps.js') }}"></script>
+{% endblock %}
+
+<IMG STYLE="border: none;" SRC="http://mattsoniak.com/wp-content/uploads/2011/02/shrimp-2-e1298906037657.jpg" ALT="ShrimpWorld1">
+</body>
+</html>

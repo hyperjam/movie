@@ -1,0 +1,4 @@
+services:
+#    student_shrimp_menu.example:
+#        class: Student\ShrimpMenuBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

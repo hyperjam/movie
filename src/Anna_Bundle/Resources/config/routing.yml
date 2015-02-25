@@ -1,0 +1,12 @@
+hello_homepage:
+    #path: /hello-world.html
+    path: /hello/{fname}/{lname}
+    defaults: { _controller: HelloBundle:Default:index ,lname:" "}
+#By adding lname to the defaults key, the {page} placeholder is no longer required.
+#The URL /hello will match this route and the value of the lname parameter will be set to 1. 
+# hello/anna - default lname=1
+
+#    defaults: { _controller: HelloBundle:Default:index ,lname:" and there is no second parameter"}
+
+# path: /Book/{book}
+  #  defaults: { _controller: HelloBundle:Default:book}

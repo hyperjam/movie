@@ -1,0 +1,24 @@
+h1 {
+color: blue;
+text-align: center;
+font-size: 250%;
+}
+
+h2
+{
+font-size: 200%;
+color: black;
+}
+
+h3{
+text-align: center;
+font-size: 150%;
+color: blue;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+
+}

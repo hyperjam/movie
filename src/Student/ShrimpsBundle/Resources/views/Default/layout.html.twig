@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>The Shrimp World</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/shrimps/css/shrimps.css')  }} " rel="stylesheet" /> 
+  {% endblock %}
+
+ </head>
+
+<body onLoad="popup()">
+  <h1>The Shrimp World</h1>
+  <h2>Shrimp type</h2>
+  {% block content %}
+
+  {% endblock %}
+<a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/">Home page </a>
+{% block javascripts  %}    
+<script type="text/javascript" src="{{ asset('bundles/shrimps/js/shrimps.js') }}"></script>
+{% endblock %}
+
+</body>
+</html>

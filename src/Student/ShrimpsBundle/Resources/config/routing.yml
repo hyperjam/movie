@@ -1,0 +1,13 @@
+shrimps_homepage:
+    resource: "@ShrimpsBundle/Controller"
+    type:     annotation
+
+
+shrimps_sri:
+    resource: "@ShrimpsBundle/Controller"
+    type:     annotation
+
+shrimps_zebra:
+    resource: "@ShrimpsBundle/Controller"
+    type:     annotation
+

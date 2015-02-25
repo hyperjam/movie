@@ -1,0 +1,9 @@
+project_films_homepage:
+
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_one:
+
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation

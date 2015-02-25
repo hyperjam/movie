@@ -1,0 +1,4 @@
+student_sri:
+
+ resource: "@StudentSriBundle/Controller"
+ type:     annotation

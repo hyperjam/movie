@@ -1,0 +1,22 @@
+{% extends "::layout.html.twig" %}
+
+
+ {% block content %} 
+
+  <h3>Sri Lanka Dwarf</h3>
+  <dl>
+   <dt>Size</dt>
+   <dd>2.5-3cm</dd>
+   <dt>Water parameters</dt>
+   <dd>Water parameters are not important as long as you have clean, dechlorinated tap water and a cycled and *mature* tank  I keep and breed them in San Diego tap water, which is probably the hardest, highest TDS water anywhere in the country. </dd>
+   <dt>Photo</dt>
+    <dd> <img src=    "{{asset ('bundles/shrimps/images/sri_shrimp.jpg') }} " alt="Symfony!" /> </dd>
+  </dl>
+
+{% endblock %}
+
+{% block navigation %}
+<a href="{{path ('tiger')}}">Tiger Shrimp </a>
+<br/>
+<a href="{{path ('zebra')}}">Chinese zebra Shrimp </a>
+{% endblock %}

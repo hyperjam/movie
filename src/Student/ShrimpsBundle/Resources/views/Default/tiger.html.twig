@@ -1,0 +1,23 @@
+{% extends "::layout.html.twig" %}
+
+
+ {% block content %} 
+
+  <h3>Tiger shrimp</h3>
+  <dl>
+   <dt>Size</dt>
+   <dd>2.5-3.5cm</dd>
+   <dt>Water parameters</dt>
+   <dd>Prefers acidic water to feel well and breed. General
+   hardness and conductivity of the water are of no importance.</dd>
+   <dt>Photo</dt>
+    <dd> <img src=    "{{asset ('bundles/shrimps/images/tiger_shrimp.jpg') }} " alt="Symfony!" /> </dd>
+  </dl>
+
+{% endblock %}
+
+{% block navigation %}
+<a href="{{path ('zebra')}}">Chinese zebra Shrimp </a>
+<br/>
+<a href="{{path ('sri_lanka')}}">Sri lanka dwarf</a>
+{% endblock %}
