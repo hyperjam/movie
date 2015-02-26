@@ -66,7 +66,8 @@
         </li>
      
           <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-        <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="{{path ('signup')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+        <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li>
       </ul>
 
 
@@ -174,7 +175,7 @@
                 <h3>TOP 3 POPULAR MOVIES</h3>
                 <h4>Subheading</h4>
                 <p class=" text-justify"></p>
-                     <a class="btn btn-primary" href="#">View More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                     <a class="btn btn-primary" href="">View More <span class="glyphicon glyphicon-chevron-right"></span></a>
              </div>
                     </div>
                                 </div>
@@ -211,10 +212,10 @@
                     <div class="col-sm-4 col-lg-4 col-md-4">
 
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                            <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
                             <div class="caption">
                                 <h4 class="pull-right">$10.99</h4>
-                                <h4><a href="">First Movie</a>
+                                <h4><a href="{{path ('first')}}">First Movie</a>
                                 </h4>
 
 <button type="button" class="btn btn-xs btn-success">Fantasy</button>
@@ -495,7 +496,8 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" style="position:absolute;
+   bottom:0;">
                     <p>Copyright &copy; 2015</p>
                 </div>
             </div>

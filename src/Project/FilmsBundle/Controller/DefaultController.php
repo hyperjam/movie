@@ -12,7 +12,7 @@ class DefaultController extends Controller
 {
 /**
  * Menu action.
- * @Route("/" )
+ * @Route("/" , name="home")
  * @Method({"GET", "POST"})
  * @Template("ProjectFilmsBundle:Default:home.html.twig")
  */
@@ -24,7 +24,7 @@ class DefaultController extends Controller
 
 /**
  * first film action.
- * @Route("/first.html" )
+ * @Route("/first" , name="first" )
  * @Method({"GET", "POST"})
  * @Template("ProjectFilmsBundle:Default:first.html.twig")
  */
@@ -32,5 +32,32 @@ class DefaultController extends Controller
     {
         return $this->render('ProjectFilmsBundle:Default:first.html.twig', array());
     }
+
+ /**
+ * signup action.
+ * @Route("/signup" , name="signup" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:singup.html.twig")
+ */
+ 
+     public function signupAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:signup.html.twig', array());
+
+    }
+
+
+
+/**
+ * review action.
+ * @Route("/addreview" , name="review" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:review.html.twig")
+ */
+     public function reviewAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
+    }
+
 }
 

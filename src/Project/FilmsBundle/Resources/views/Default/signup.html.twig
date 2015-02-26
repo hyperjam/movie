@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> BorrowingFilmOnline</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap-theme.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/heroic-features.css')  }} " rel="stylesheet" />
+   <link href=  "{{asset ('bundles/projectfilms/css/shop-homepage.css')  }} " rel="stylesheet" />
+   {% endblock %}
+
+   <link href="{{ asset('bundles/projectfilms/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+
+  <script language="javascript">
+  function femail(x)
+  {
+   pattern=/^[^@.]+@[^@]+[.][^@]+$/
+   if (!x.value.match(pattern))
+    alert("Incorrect e-mail address")
+  }
+  </script>
+<style>
+.jumbotron {
+     padding: 0.4em 0.2em;
+     
+     color: black;
+     background-color: #adebad ;
+     
+     
+    p {
+        font-size: 1.2em;
+        font-weight: 200;
+        font-weight: lighter;
+        .btn {
+            padding: 0.2em;
+        }
+    }
+    
+    .footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+
+}
+}
+</style>
+
+ </head>
+
+<body  left="25px">
+<div>
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{path ('home')}}"> BorrowingFilmOnline</a>
+            </div>
+            <!-- Collect the nav links, forms, and other c ontent for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+
+  <form class="form-horizontal"  enctype="multipart/form-data" method="POST" action="">
+
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">                
+            <div class="col-md-6">
+                <h3 class="dark-grey">Sign up</h3>
+                
+                <div class="form-group col-lg-10">
+                    <label for="name">Username</label>
+                    <input class="input form-control" type="text" name="name"  id="name" required>
+                </div>
+                
+                <div class="form-group col-lg-6">
+                    <label for="password">Password</label>
+                    <input class="input" type="password" name="password" id="password" maxlength="11" required>
+                </div>
+                
+                                
+                <div class="form-group col-lg-6">
+                    <label for="email">Email Address</label>
+                    <input class="input" type="text"  name="email" id="email" onBlur="femail(email)"  required>
+                </div>
+                              
+            
+            </div>
+        
+            <div class="col-md-6">
+                <h3 class="dark-grey">Terms and Conditions</h3>
+                <p class=" text-justify">
+                    By clicking on "Create account" you agree to The BorrowFilmOnline's' Terms and Conditions
+                </p>
+                <p class=" text-justify">
+                    While rare, prices are subject to change based on exchange rate fluctuations - 
+                    should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
+                </p>
+                <p class=" text-justify">
+                    Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
+                </p>
+                <p class=" text-justify">
+                    Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
+                </p>
+                
+                <button type="submit" class="btn btn-primary">Create account</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+  </form>
+
+
+
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" style="position:absolute;
+   bottom:0;">
+                    <p >Copyright &copy; 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>  <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    
+</body>
+</html>
