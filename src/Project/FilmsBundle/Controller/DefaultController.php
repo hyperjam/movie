@@ -47,13 +47,6 @@ class DefaultController extends Controller
     }
 
 
-
-/**
- * review action.
- * @Route("/addreview" , name="review" )
- * @Method({"GET", "POST"})
- * @Template("ProjectFilmsBundle:Default:review.html.twig")
- */
      public function reviewAction()
     {
         return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());

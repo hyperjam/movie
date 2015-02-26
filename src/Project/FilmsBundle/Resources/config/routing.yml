@@ -13,7 +13,6 @@ project_films_signup:
     type:     annotation
 
 
-project_films_review:
-
-    resource: "@ProjectFilmsBundle/Controller"
-    type:     annotation
+project_films_addreview:
+    path:     /addreview
+    defaults: { _controller: ProjectFilmsBundle:Default:review}
