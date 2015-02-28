@@ -14,8 +14,9 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Client
  * @ORM\Table()
  * @ORM\Entity
- */
-class Client implements UserInterface
+**/
+class Client implements UserInterface, \Serializable
+
 {
     /**
      * @var integer
@@ -128,6 +129,13 @@ class Client implements UserInterface
         return $this->password;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function equals(UserInterface $user)
+    {
+        return $this->username === $user->getUsername();
+    }
 
  public function getSalt(){
         return null;
@@ -138,7 +146,25 @@ class Client implements UserInterface
     public function eraseCredentials(){
     }
 
-
+public function serialize()
+    {
+        return serialize(array(
+            $this->client_id,
+            $this->username,
+            $this->email,
+            $this->password  
+        ));
+    }
+    
+    public function unserialize($serialized)
+    {
+        list(
+            $this->client_id,
+            $this->username,
+            $this->email,
+            $this->password     
+            ) = unserialize($serialized);
+    }
 
 
 }
