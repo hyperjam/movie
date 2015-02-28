@@ -83,22 +83,19 @@
         <div class="container-page">                
             <div class="col-md-6">
                 <h3 class="dark-grey">Sign up</h3>
-                
-                <div class="form-group col-lg-10">
-                    <label for="name">Username</label>
-                    <input class="input form-control" type="text" name="name"  id="name" required>
-                </div>
-                
-                <div class="form-group col-lg-6">
-                    <label for="password">Password</label>
-                    <input class="input" type="password" name="password" id="password" maxlength="11" required>
-                </div>
-                
-                                
-                <div class="form-group col-lg-6">
-                    <label for="email">Email Address</label>
-                    <input class="input" type="text"  name="email" id="email" onBlur="femail(email)"  required>
-                </div>
+                {% block body -%}
+
+
+ 
+
+    {{ form(form) }}
+
+ 
+
+{% endblock %}
+                                    
+
+                 
                               
             
             </div>

@@ -1,0 +1,21 @@
+Project\FilmsBundle\Entity\Client:
+    type: entity
+    table: null
+    repositoryClass: Project\FilmsBundle\Entity\ClientRepository
+    id:
+        client_id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '25'
+        email:
+            type: string
+            length: '25'
+        password:
+            type: string
+            length: '255'
+    lifecycleCallbacks: {  }

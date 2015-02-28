@@ -12,6 +12,10 @@ project_films_signup:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation
 
+project_films_new:
+    path:     /new
+    defaults: { _controller: "ProjectFilmsBundle:Default:new" }
+
 
 project_films_addreview:
     path:     /addreview

@@ -1,12 +1,14 @@
 <?php
-
-
 namespace Project\FilmsBundle\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Project\FilmsBundle\Entity\Client;
+use Project\FilmsBundle\Form\ClientType;
 
 class DefaultController extends Controller
 {
@@ -40,12 +42,51 @@ class DefaultController extends Controller
  * @Template("ProjectFilmsBundle:Default:singup.html.twig")
  */
  
-     public function signupAction()
+     public function createAction(Request $request)
     {
-        return $this->render('ProjectFilmsBundle:Default:signup.html.twig', array());
+       
 
+ $entity = new Client();
+        $form = $this->createCreateForm($entity);
+        $form->handleRequest($request);
+        
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+            return $this->redirect($this->generateUrl('home'));
+        }
+       return $this->render('ProjectFilmsBundle:Default:signup.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        )); 
+
+
+     }
+        
+         private function createCreateForm(Client $entity)
+    {
+        $form = $this->createForm(new ClientType(), $entity, array(
+            'action' => $this->generateUrl('signup'),
+            'method' => 'POST',
+        ));
+        $form->add('submit', 'submit', array('label' => 'Create'));
+        return $form;
     }
 
+    /**
+     * Displays a form to create a new User entity.
+     *
+     */
+    public function newAction()
+    {
+        $entity = new Client();
+        $form   = $this->createCreateForm($entity);
+        return $this->render('ProjectFilmsBundle:Default:singup.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+}
 
      public function reviewAction()
     {
