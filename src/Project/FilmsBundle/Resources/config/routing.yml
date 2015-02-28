@@ -16,12 +16,15 @@ project_films_new:
     path:     /new
     defaults: { _controller: "ProjectFilmsBundle:Default:new" }
 
-# login:
-# pattern: /login
-# defaults: { _controller: ProjectFilmsBundle:Default:login }
+login:
+ pattern: /login
+ defaults: { _controller: ProjectFilmsBundle:Default:login }
 
-# login_check:
-# pattern: /login_check
+login_check:
+ pattern: /login_check
+
+logout:
+    path:     /logout
 
 project_films_addreview:
     path:     /addreview

@@ -2,7 +2,7 @@
 namespace Project\FilmsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -54,7 +54,7 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            return $this->redirect($this->generateUrl('home'));
+            return $this->redirect($this->generateUrl('login'));
         }
        return $this->render('ProjectFilmsBundle:Default:signup.html.twig', array(
             'entity' => $entity,
@@ -93,10 +93,33 @@ class DefaultController extends Controller
         return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
     }
 
-    public function loginAction()
+
+        public function loginAction(Request $request)
     {
-        return $this->render('ProjectFilmsBundle:Default:login.html.twig', array());
+        $session = $request->getSession();
+        // get the login error if there is one
+        if ($request->attributes->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
+            $error = $request->attributes->get(
+                SecurityContextInterface::AUTHENTICATION_ERROR
+            );
+        } elseif (null !== $session && $session->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
+            $error = $session->get(SecurityContextInterface::AUTHENTICATION_ERROR);
+            $session->remove(SecurityContextInterface::AUTHENTICATION_ERROR);
+        } else {
+            $error = '';
+        }
+        return $this->render(
+            'ProjectFilmsBundle:Default:login.html.twig',
+            array(
+                'error'         => $error,
+            )
+        );
     }
+
+     public function loginCheckAction()
+    {
+    }
+    
 
 }
 

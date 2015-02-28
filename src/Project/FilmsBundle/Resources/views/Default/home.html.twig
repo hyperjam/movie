@@ -47,16 +47,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"> BorrowingFilmOnline</a>
+                <a class="navbar-brand" href=""> BorrowingFilmOnline</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{path ('home')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+        {% if is_granted('ROLE_USER') %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a href="" class="active"><span class="glyphicon glyphicon-user"></span>
+            {{ app.user.username }}
+                 {% endif %}</a></li> 
+       
+        <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 
+        {% else %}
+
+        <li><a href="{{path ('login')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
      
           <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-        <li><a href="{{path ('signup')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
-        <!-- <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> -->
+        <li><a href="{{path ('signup')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a>
+          
+        </li>
+       {% endif %} 
+
       </ul>
 
 
@@ -121,6 +133,7 @@
             <div class="col-md-6">
                 <h3>TOP 3 POPULAR MOVIES</h3>
                 <h4>Interstellar</h4>
+
                 <p class=" text-justify" style="padding-top: 10px;">In the near future, Earth has been devastated by drought and famine, causing a scarcity in food and extreme changes in climate. When humanity is facing extinction, a mysterious rip in the space-time continuum is discovered, giving mankind the opportunity to widen its lifespan. A group of explorers must travel beyond our solar system in search of a planet that can sustain life. The crew of the Endurance are required to think bigger and go further than any human in history as they embark on an interstellar voyage into the unknown. Coop, the pilot of the Endurance, must decide between seeing his children again and the future of the human race.</p>
                      <a class="btn btn-primary" href="" style="padding-top: 5px;">View More <span class="glyphicon glyphicon-chevron-right"></span></a>
              </div>

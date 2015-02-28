@@ -41,6 +41,9 @@
                 </button>
                 <a class="navbar-brand" href="#">Start Bootstrap</a>
             </div>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <p> Hello {{ app.user.username }}</p>
+{% endif %}
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
