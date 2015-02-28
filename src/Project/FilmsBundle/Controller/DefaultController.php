@@ -93,5 +93,10 @@ class DefaultController extends Controller
         return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
     }
 
+    public function loginAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:login.html.twig', array());
+    }
+
 }
 

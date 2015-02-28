@@ -31,12 +31,14 @@ class Client implements UserInterface, \Serializable
      * @var string
      * @Assert\NotBlank(message="client.not_blank")
      * @ORM\Column(name ="username",type="string", length=25, unique=true)
+     * )
      */
     private $username;
 
     /**
      * @var string
      * @Assert\NotBlank(message="client.not_blank")
+     * @Assert\Regex("/^[^@.]+@[^@]+[.][^@]+$/")
      * @ORM\Column(name="email",type="string", length=25, unique=true )
      */
     private $email;
