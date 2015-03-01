@@ -73,17 +73,13 @@
       </ul>
 
 
-               <!--  <ul class="nav navbar-nav">
+                 <!-- <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">List of reviews</a>
                     </li>
-                    <li>
-                        <a href="#">Services</a>
+ 
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>-->
+                </ul> -->
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -97,14 +93,24 @@
 
             <div class="col-md-3">
                 <div class="list-group">
-                    <p  class="list-group-item lead" style="text-align : center; " >Filter by Genre</p>
-                    <a href="" class="list-group-item active" >All Genres</a>
+                    
+                    <p  class="list-group-item " style="text-align : center; " >Reviews</p>
+                    <a href=""{{path ('home')}}"" class="list-group-item active" >View film reviews</a>
+                </div>
+
+                <div class="list-group">
+                    
+                    <p  class="list-group-item " style="text-align : center; " >Filter by genre</p>
+                    <a href=""{{path ('home')}}"" class="list-group-item active" >All Genres</a>
                     <a href="" class="list-group-item">Action</a>
                     <a href="" class="list-group-item">Comedy</a>
                     <a href="" class="list-group-item">Drama</a>
-                    <a href="" class="list-group-item">Romance</a>
+                    <a href="" class="list-group-item">Mystery</a>
                     <a href="" class="list-group-item">Fantasy</a>
+                    <a href="" class="list-group-item">Sci-fi</a>
+                    
                 </div>
+
             </div>
 
             <div class="col-md-9">
@@ -127,7 +133,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-5">
                <p> 
-                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://blog.sujay.sarma.in/wp-content/uploads/interstellar_movieposter_small.jpg" alt="">
+                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://www.filmivip.ru/kartinkifoto18/interstellar-2014.jpg" alt="Image">
                     <!-- image real size - 320 456 -->
                 </p>
             </div>
@@ -149,15 +155,15 @@
             <div class="col-md-1"></div>
             <div class="col-md-5">
                <p> 
-                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://blog.sujay.sarma.in/wp-content/uploads/interstellar_movieposter_small.jpg" alt="">
+                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://ecx.images-amazon.com/images/I/51VhCAqLQbL._SY445_.jpg" alt="Image">
                     <!-- image real size - 320 456 -->
                     <br/>
                 </p>
             </div>
             <div class="col-md-6">
                <h3>TOP 3 POPULAR MOVIES</h3>
-                <h4>Interstallar</h4>
-                <p class=" text-justify" ></p>
+                <h4>The Hunger Games: Mockingjay - Part 1</h4>
+                <p class=" text-justify" >Katniss Everdeen is in District 13 after she shatters the games forever. Under the leadership of President Coin and the advice of her trusted friends, Katniss spreads her wings as she fights to save Peeta and a nation moved by her courage.</p>
                      <a class="btn btn-primary" href="#">View More <span class="glyphicon glyphicon-chevron-right"></span></a>
              </div>
                     </div> 
@@ -170,14 +176,14 @@
             <div class="col-md-1"></div>
             <div class="col-md-5">
                <p> 
-                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://blog.sujay.sarma.in/wp-content/uploads/interstellar_movieposter_small.jpg" alt="">
+                    <img class="slide-image"  style="height:420 px;width : 320px;  padding-top: 23px;" src="http://upload.wikimedia.org/wikipedia/en/8/8f/GOTG-poster.jpg" alt="Image">
                     <!-- image real size - 320 456 -->
                 </p>
             </div>
             <div class="col-md-6">
                 <h3>TOP 3 POPULAR MOVIES</h3>
-                <h4>Subheading</h4>
-                <p class=" text-justify"></p>
+                <h4>Gardian of the Galaxy</h4>
+                <p class=" text-justify">A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.</p>
                      <a class="btn btn-primary" href="">View More <span class="glyphicon glyphicon-chevron-right"></span></a>
              </div>
                     </div>
@@ -205,6 +211,108 @@
 
  <div>
 
+<div class="row">
+        <div class="col-sm-12 col-lg-12 col-md-12">
+         <p class="bg-warning">   <div class="jumbotron text-center" > <p >TOP 3 REVIEWED FILMS</p> </div></p>
+        </div>
+    </div>
+
+    <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+
+                        <div class="thumbnail">
+                            <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
+                            <div class="caption">
+                                <h4 class="pull-right">$10.99</h4>
+                                <h4><a href="{{path ('first')}}">Gone Girl</a>
+                                </h4>
+
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+ <button type="button" class="btn btn-xs btn-primary">Mistery</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                           <!--  <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="second">Kingsman</a>
+                                </h4>
+
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+
+
+ 
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+    
+
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Jurasic Park</a>
+                                </h4>
+                               
+
+<button type="button" class="btn btn-xs btn-default">Action</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">11 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+</div>
+
     <div class="row">
         <div class="col-sm-12 col-lg-12 col-md-12">
          <p class="bg-warning">   <div class="jumbotron text-center" > <p >Available Movies</p> </div></p>
@@ -218,10 +326,9 @@
                             <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
                             <div class="caption">
                                 <h4 class="pull-right">$10.99</h4>
-                                <h4><a href="{{path ('first')}}">First Movie</a>
+                                <h4><a href="{{path ('first')}}">Birdman</a>
                                 </h4>
 
-<button type="button" class="btn btn-xs btn-success">Fantasy</button>
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
 <button type="button" class="btn btn-xs btn-warning">Comedy</button>
 
@@ -230,7 +337,7 @@
                              <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -239,7 +346,7 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -248,11 +355,18 @@
                             <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="second">Second movie</a>
+                                <h4><a href="second">The Hobbit II</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                               
+<button type="button" class="btn btn-xs btn-success">Fantasy</button>
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">12 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -261,42 +375,29 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
+                  
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Third movie</a>
+                                <h4><a href="#">Gardian of the Galaxy</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">11 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                               
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fourth movie</a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">6 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -305,20 +406,118 @@
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Divergent</a>
+                                </h4>
+                               
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
                         </div>
                     </div>
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Gone Girl</a>
+                                </h4>
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-primary">Mistery</button>
+
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">The Hunger Games </a>
+                                </h4>
+                              
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth movie</a>
+                                <h4><a href="#">The Maze Runner</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                               
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+<button type="button" class="btn btn-xs btn-primary">Mistery</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">5 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -327,7 +526,36 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Interstellar</a>
+                                </h4>
+                              
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
                         </div>
                     </div>
 
@@ -336,11 +564,17 @@
                             <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">6 movie</a>
+                                <h4><a href="#">Kingsman </a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">5 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -349,7 +583,37 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
+                            </div> -->
+                        </div>
+                    </div>
+                      <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Lucy</a>
+                                </h4>
+                                <button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
+                           <!--  <div class="ratings">
+                                <p class="pull-right">11 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
                         </div>
                     </div>
 
@@ -358,55 +622,18 @@
                             <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
+                                <h4><a href="#">Edge of Tommorow </a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">5 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">5 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                            <!-- <div class="ratings">
                                 <p class="pull-right">5 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -415,20 +642,25 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Jurasic Park </a>
+                                </h4>
+                                
+<button type="button" class="btn btn-xs btn-default">Action</button>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
                             </div>
-                            <div class="ratings">
+                           <!--  <div class="ratings">
                                 <p class="pull-right">5 reviews</p>
                                 <p>
                                     <span class="glyphicon glyphicon-star"></span>
@@ -437,55 +669,14 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">5 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Fifth </a>
-                                </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">5 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                 </div>
 
             </div>
+
 
         </div>
 
