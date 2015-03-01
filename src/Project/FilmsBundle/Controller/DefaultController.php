@@ -35,6 +35,17 @@ class DefaultController extends Controller
         return $this->render('ProjectFilmsBundle:Default:first.html.twig', array());
     }
 
+    /**
+ * second film action.
+ * @Route("/second" , name="second" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:second.html.twig")
+ */
+     public function secondAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:second.html.twig', array());
+    }
+
  /**
  * signup action.
  * @Route("/signup" , name="signup" )
