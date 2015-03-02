@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
   <entity repository-class="Project\FilmsBundle\Entity\FilmRepository" name="Project\FilmsBundle\Entity\Film">
-    <id name="film_id" type="integer" column="film_id">
-      <generator strategy="AUTO"/>
+    <id name="titlet" type="string" column="titlet" length="50" >
     </id>
     <field name="title" type="string" column="title" length="50" nullable="true"/>
     <field name="director" type="string" column="director" length="50" nullable="true"/>

@@ -15,17 +15,23 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Film 
 {
-    /**
-     * @var integer
-     * @ORM\Column(name="film_id",type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $film_id;
+    
+    //  @var integer
+    //  @ORM\Id @Column(name="film_id",type="integer", unique="true")
+    
+    // private $film_id;
+
 
     /**
      * @var string
-     * @ORM\Column(name="title", type="string", length=50, nullable=true)
+     * @ORM\Id
+     * @Column(name="titlet", type="string",length="50", unique="true" ) 
+     */
+    private $titlet;
+
+    /**
+     * @var string
+     * @ORM\Column(name="title", type="string", length=50, nullable="true")
      */
     private $title;
 
@@ -102,29 +108,51 @@ class Film
 //     }
 
 
+  
+    //   Get id
+     
+    //   @return integer 
+     
+    // public function getFilm_Id()
+    // {
+    //     return $this->film_id;
+    // }
+
+    
+    //  Set title
+     
+    //   @param string $title
+    //   @return Film
+     
+    // public function setTitle($title)
+    // {
+    //     $this->title = $title;
+
+    //     return $this;
+    // }
+
     /**
-     * Get id
+     * Get titlet
      *
-     * @return integer 
+     * @return string 
+      * @return Film
      */
-    public function getFilm_Id()
+    public function getTitlet()
     {
-        return $this->film_id;
+        return $this->titlet;
     }
 
-    /**
-     * Set title
+/**
+     * Set titlet
      *
-     * @param string $title
-     * @return Film
+     * @param \Project\FilmsBundle\Entity\Film $titlet
+     * @return Review
      */
-    public function setTitle($title)
+    public function setTitlet(\Project\FilmsBundle\Entity\Film $titlet=null )
     {
-        $this->title = $title;
-
+        $this->titlet = $titlet;
         return $this;
     }
-
     /**
      * Get title
      *
@@ -164,6 +192,7 @@ class Film
      * @param integer $year
      * @return Film
      */
+
     public function setYear($year)
     {
         $this->year = $year;
@@ -301,4 +330,35 @@ class Film
      * @ORM\OneToMany(targetEntity="Review", mappedBy="film_id")
      */
     protected $reviewId;
+
+
+    public function __toString()
+{
+    return $this->titlet;
+}
+
+/**
+     *
+     * @ORM\OneToMany(targetEntity="Review", mappedBy="titled")
+     */
+    protected $review_id;
+
+/**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->review_id = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    /**
+     * Add refleksje
+     *
+     * @param \Project\FilmBundle\Entity\Review $review_id
+     * @return Film
+     */
+    public function addRefleksje(\Project\FilmBundle\Entity\Review $review_id )
+    {
+        $this->review_id [] = $review_id ;
+        return $this;
+    }
 }

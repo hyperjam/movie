@@ -11,6 +11,7 @@ use Project\FilmsBundle\Entity\Client;
 use Project\FilmsBundle\Entity\Film;
 use Project\FilmsBundle\Entity\Review;
 use Project\FilmsBundle\Form\ClientType;
+use Project\FilmsBundle\Form\ReviewType;
 
 class DefaultController extends Controller
 {
@@ -111,8 +112,21 @@ class DefaultController extends Controller
 
 public function reviewAction(Request $request){
 
-
-       return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
+  $refleksja = new Review();
+        $refleksja->setAuthor($this->getUser()->getUsername());
+        $form = $this->createForm(new ReviewType(), $refleksja);
+        if ($request->isMethod('POST')
+                && $form->handleRequest($request)
+                && $form->isValid()
+                ) {
+                        $em = $this->getDoctrine()->getManager();
+                        $em->persist($refleksja);
+                        $em->flush();
+                         return $this->redirect($this->generateUrl('home', array()));
+                }
+        return $this->render('ProjectFilmsBundle:Default:review.html.twig',  array('form' => $form->createView()));
+    }
+       
      
     
        
@@ -157,7 +171,7 @@ public function reviewAction(Request $request){
            
 // return $this->render("ProjectFilmsBundle:Default:hobbit.html.twig", array());
 // }    
-}
+
 
         public function loginAction(Request $request)
     {

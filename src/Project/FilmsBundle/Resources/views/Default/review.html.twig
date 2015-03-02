@@ -69,10 +69,13 @@ function goBack() {
                 
                 <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('project_films_review')}}">
                   <!-- project_films_review -->
-              <label for="review"></label>
+              <!-- <label for="review"></label>
               <textarea class="form-control" rows="10" name="review" id="review" placeholder="Place for your review"></textarea>
               </br></br>
-              <button type="submit"  class="btn btn-large btn-success">Submit</button>
+              <button type="submit"  class="btn btn-large btn-success">Submit</button> -->
+              {{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
              <!--  <input type="button" onClick="goback()" class="btn" value="Return to film"> -->
             </form>
                                 

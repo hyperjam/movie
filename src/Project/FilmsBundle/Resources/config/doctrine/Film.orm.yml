@@ -3,11 +3,10 @@ Project\FilmsBundle\Entity\Film:
     table: film
     repositoryClass: Project\FilmsBundle\Entity\FilmRepository
     id:
-        film_id:
-            type: integer
-            id: true
-            generator:
-                strategy: AUTO
+        titlet:
+            type:string
+            id:true
+            length: '50'       
     fields:
         title:
             type: string

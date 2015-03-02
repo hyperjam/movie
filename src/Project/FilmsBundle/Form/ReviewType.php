@@ -15,11 +15,17 @@ class ReviewType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('topreviewed')
-            ->add('review')
-            ->add('client_id')
-            ->add('film_id')
+            ->add('titlet')
+            ->add('review','textarea',array('label'=>'Type your reflection here'))
+            ->add('topreviewed','integer',array('label'=>'Rate the film (from 1-9)'))
+            ->add('save', 'submit', array(
+                'label' => 'Submit', 
+                'attr' => array(
+                    'class' => 'btn btn-primary'
+                )
+            ))
         ;
+
     }
     
     /**

@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Review
 * @ORM\Table
-* @ORM\Table(name="review", indexes={@ORM\Index(name="film_id", columns={"film_id"})})
+* @ORM\Table(name="review", indexes={@ORM\Index(name="titlet", columns={"titlet"})})
  * @ORM\Entity
  */
 class Review
@@ -26,31 +26,33 @@ class Review
 
     /**
      * @var string
-     * @ORM\Column(name="review", type="string", length=255,  nullable="true")
+     * @ORM\Column(name="review", type="string", length=255)
      */
     private $review;
 
     /**
      * @var integer
-      * @ORM\Column(name="topreviewed", type="integer", nullable="true")
+      * @ORM\Column(name="topreviewed", type="integer" )
      */
     private $topreviewed;
 
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="client_id", type="integer", nullable=false)
+     * @ORM\Column(name="author", type="string")
      */
-    private $client_id;
+    private $author;
 
     /**
      * @ORM\ManyToOne(targetEntity="Project\FilmsBundle\Entity\Film")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="film_id", referencedColumnName="film_id")
+     *   @ORM\JoinColumn(name="titlet", referencedColumnName="titlet")
      * })
      */
-    protected $film_id;
+    protected $titlet;
+
+
 
 
     /**
@@ -86,6 +88,7 @@ class Review
         return $this->review;
     }
 
+    
     /**
      * Set topreviewed
      *
@@ -109,45 +112,47 @@ class Review
         return $this->topreviewed;
     }
     /**
-     * Set client_id
+     * Set author
      *
-     * @param integer $client_id
+     * @param string $author
      * @return Review
      */
-    public function setClient_Id($client_id)
+    public function setAuthor($author)
     {
-        $this->client_id = $client_id;
+        $this->author = $author;
         return $this;
     }
     /**
-     * Get client_id
+     * Get author
      *
      * @return integer 
      */
-    public function getClient_Id()
+    public function getAuthor()
     {
-        return $this->client_id;
+        return $this->author;
     }
 
 
     /**
-     * Set film_id
+     * Set titlet
      *
-     * @param Project\FilmsBundle\Entity\Film $film_id
+     * @param \Project\FilmsBundle\Entity\Film $titlet
      * @return Review
      */
-    public function setFilm_Id(Project\FilmsBundle\Entity\Film $film_id = null)
+    public function setTitlet(\Project\FilmsBundle\Entity\Film $titlet=null )
     {
-        $this->film_id = $film_id;
+        $this->titlet = $titlet;
         return $this;
     }
     /**
-     * Get film_id
+     * Get titlet
      *
-     * @return Project\FilmsBundle\Entity\Film 
+     * @return \Project\FilmsBundle\Entity\Film 
      */
-    public function getFilm_Id()
+    public function getTitlet()
     {
-        return $this->film_id;
+        return $this->titlet;
     }
+
+
 }
