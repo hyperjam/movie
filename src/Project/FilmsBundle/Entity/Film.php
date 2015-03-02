@@ -361,4 +361,14 @@ class Film
         $this->review_id [] = $review_id ;
         return $this;
     }
+
+     /**
+     * Get refleksje
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRefleksje()
+    {
+        return $this->review_id;
+    }
 }

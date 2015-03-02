@@ -127,7 +127,30 @@ public function reviewAction(Request $request){
         return $this->render('ProjectFilmsBundle:Default:review.html.twig',  array('form' => $form->createView()));
     }
        
-     
+
+
+ public function listreviewsAction()
+{
+
+        $em = $this->getDoctrine()->getManager();
+        $refleksjeRepository = $em->getRepository("ProjectFilmsBundle:Review");
+        $refleksja = $refleksjeRepository->findAll();
+        return $this->render('ProjectFilmsBundle:Reflection:listreviews.html.twig', array('review' => $refleksja));
+    
+
+    //   $product = $this->getDoctrine()
+    //     ->getRepository('Project\FilmsBundle:Review')
+    //     ->find($id);
+
+    // if (!$product) {
+    //     throw $this->createNotFoundException(
+    //         'No product found for id '.$id
+    //     );
+    // }
+
+    // ... do something, like pass the $product object into a template
+}
+    
     
        
 //          $session=$this->getRequest()->getSession();

@@ -17,7 +17,7 @@ class ReviewType extends AbstractType
         $builder
             ->add('titlet')
             ->add('review','textarea',array('label'=>'Type your reflection here'))
-            ->add('topreviewed','integer',array('label'=>'Rate the film (from 1-9)'))
+            ->add('topreviewed','integer',array('label'=>'Rate the film (from -10 to 10)'))
             ->add('save', 'submit', array(
                 'label' => 'Submit', 
                 'attr' => array(
