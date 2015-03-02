@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{path ('first')}}"> Back</a>
+                <a class="navbar-brand" href="{{path ('home')}}"> Back</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,19 +56,25 @@
         </div>
     </nav>
 
+<script>
+function goBack() {
+   window.history.back()
+}
+    </script>
 <div class="container-fluid">
     <section class="container">
         <div class="container-page">                
             <div class="col-md-6">
                  <h3 class="dark-grey">Add film review</h3>
-                <form method=post action="" enctype="multipart/form-data">
-           <input type="text" name="name" placeholder="Your name"><br/><br>
-           <textarea rows="6" name="comment" cols="90" placeholder="Type your review here"></textarea>
-           <!-- <button type="submit" class="btn btn-large btn-success" href="{{path ('first')}}" >Submit</button>  -->
-           <a class="btn btn-large btn-success"  href="{{path ('first')}}">Submit</a>
-
-  </form>
                 
+                <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('project_films_review')}}">
+                  <!-- project_films_review -->
+              <label for="review"></label>
+              <textarea class="form-control" rows="10" name="review" id="review" placeholder="Place for your review"></textarea>
+              </br></br>
+              <button type="submit"  class="btn btn-large btn-success">Submit</button>
+             <!--  <input type="button" onClick="goback()" class="btn" value="Return to film"> -->
+            </form>
                                 
                 
                               

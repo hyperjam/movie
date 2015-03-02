@@ -1,0 +1,33 @@
+Project\FilmsBundle\Entity\Film:
+    type: entity
+    table: film
+    repositoryClass: Project\FilmsBundle\Entity\FilmRepository
+    id:
+        film_id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '50'
+        director:
+            type: string
+            length: '50'
+        year:
+            type: integer
+        description:
+            type: string
+            length: '255'
+        genre:
+            type: string
+            length: '50'
+        price:
+            type: float
+        actors:
+            type: string
+            length: '255'
+        topborrowed:
+            type: integer
+    lifecycleCallbacks: {  }

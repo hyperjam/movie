@@ -8,7 +8,7 @@ project_films_one:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation
 
-project_films_second:
+project_films_hobbit:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation
 
@@ -30,6 +30,6 @@ login_check:
 logout:
     path:     /logout
 
-project_films_addreview:
-    path:     /addreview
-    defaults: { _controller: ProjectFilmsBundle:Default:review}
+project_films_review:
+    path:     /review
+    defaults: { _controller: "ProjectFilmsBundle:Default:review"}

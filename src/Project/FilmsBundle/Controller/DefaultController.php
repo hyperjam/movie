@@ -8,16 +8,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Project\FilmsBundle\Entity\Client;
+use Project\FilmsBundle\Entity\Film;
+use Project\FilmsBundle\Entity\Review;
 use Project\FilmsBundle\Form\ClientType;
 
 class DefaultController extends Controller
 {
+
+    private $mid;
 /**
  * Menu action.
  * @Route("/" , name="home")
  * @Method({"GET", "POST"})
  * @Template("ProjectFilmsBundle:Default:home.html.twig")
  */
+
 
     public function homeAction()
     {
@@ -36,14 +41,14 @@ class DefaultController extends Controller
     }
 
     /**
- * second film action.
- * @Route("/second" , name="second" )
+ * hobbit film action.
+ * @Route("/hobbit" , name="hobbit" )
  * @Method({"GET", "POST"})
- * @Template("ProjectFilmsBundle:Default:second.html.twig")
+ * @Template("ProjectFilmsBundle:Default:hobbit.html.twig")
  */
-     public function secondAction()
+     public function hobbitAction()
     {
-        return $this->render('ProjectFilmsBundle:Default:second.html.twig', array());
+        return $this->render('ProjectFilmsBundle:Default:hobbit.html.twig', array());
     }
 
  /**
@@ -99,11 +104,60 @@ class DefaultController extends Controller
         ));
 }
 
-     public function reviewAction()
-    {
-        return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
-    }
+     // public function reviewAction()
+     // {
+     //     return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
+     // }
 
+public function reviewAction(Request $request){
+
+
+       return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
+     
+    
+       
+//          $session=$this->getRequest()->getSession();
+//          $em = $this->getDoctrine()->getEntityManager();
+//          $repository = $em->getRepository('Project\FilmsBundle\Entity\Client');
+        
+//          if($session->has('username')){
+//                 // $username = $session->get('username');
+//                 $username=$username->getUsername();
+//                  $password=$username->getPassword();
+//                  $userr = $repository->findOneBy(array('username'=>$username,'password'=>$password));
+                
+//                  $a=$_SERVER['HTTP_REFERER'];
+//                  $tokens = explode('/', $a);
+//                  $mid = $tokens[sizeof($tokens)-1];
+//                  $m=(int)$mid;
+                
+//                  $con=pg_connect("host=sbazy user=s175517 dbname=s175517 password=jjSKMFv6");
+//                  $q="Select client_id from client where username='$username'";
+//                  $r=pg_exec($con,$q);
+//                  $cid = pg_fetch_result($r, 0, 0);
+//                  $c=(int)$cid;
+                
+//                  $rv=$request->get('review');
+                
+//                  $query = "INSERT INTO review(review,film_id, client_id, ) VALUES ('$rv', $m,$c );";
+//                  $r=pg_exec($con,$query);
+//                  echo "<script type='text/javascript'>alert('Review was submitted!');</script>";
+//                  switch($mid){
+//                      case 1:
+//                          $mo='hobbit';
+//                          break;
+//                  }
+
+                  
+//                  if($userr){
+                     
+//                       return $this->render("ProjectFilmsBundle:Default:hobbit.html.twig", array());
+//                  }
+               
+           
+// return $this->render("ProjectFilmsBundle:Default:hobbit.html.twig", array());
+// }    
+}
 
         public function loginAction(Request $request)
     {
