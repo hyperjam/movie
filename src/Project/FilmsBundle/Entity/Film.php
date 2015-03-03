@@ -353,10 +353,10 @@ class Film
     /**
      * Add refleksje
      *
-     * @param \Project\FilmBundle\Entity\Review $review_id
+     * @param \Project\FilmsBundle\Entity\Review $review_id
      * @return Film
      */
-    public function addRefleksje(\Project\FilmBundle\Entity\Review $review_id )
+    public function addRefleksje(\Project\FilmsBundle\Entity\Review $review_id )
     {
         $this->review_id [] = $review_id ;
         return $this;

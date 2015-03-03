@@ -135,9 +135,8 @@ public function reviewAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $refleksjeRepository = $em->getRepository("ProjectFilmsBundle:Review");
         $refleksja = $refleksjeRepository->findAll();
-        return $this->render('ProjectFilmsBundle:Reflection:listreviews.html.twig', array('review' => $refleksja));
+        return $this->render('ProjectFilmsBundle:Default:listreviews.html.twig', array('review' => $refleksja));
     
-
     //   $product = $this->getDoctrine()
     //     ->getRepository('Project\FilmsBundle:Review')
     //     ->find($id);

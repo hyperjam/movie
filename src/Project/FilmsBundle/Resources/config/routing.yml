@@ -34,3 +34,7 @@ project_films_review:
     path:     /review
     defaults: { _controller: "ProjectFilmsBundle:Default:review"}
 
+project_films_listreviews:
+    path:     /listreviews
+    defaults: { _controller: "ProjectFilmsBundle:Default:listreviews"}
+
