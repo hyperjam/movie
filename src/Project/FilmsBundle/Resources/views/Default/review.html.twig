@@ -60,15 +60,26 @@
 function goBack() {
    window.history.back()
 }
+
+
     </script>
+
+    <script>
+    function goB() {
+   alert("Your review was succesfully added. Check list of reviews to read other users opinions on films!");
+   history.back();
+ }
+</script>
+
 <div class="container-fluid">
     <section class="container">
         <div class="container-page">                
             <div class="col-md-6">
                  <h3 class="dark-grey">Add film review</h3>
                 
-                <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('project_films_review')}}">
-                  <!-- project_films_review -->
+                <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('project_films_review')}}" onSubmit=" goB();" >
+
+                  <!-- project_films_review alert('Your review was succesfully added. Check list of reviews to read other users reviews') -->
               <!-- <label for="review"></label>
               <textarea class="form-control" rows="10" name="review" id="review" placeholder="Place for your review"></textarea>
               </br></br>
@@ -76,6 +87,7 @@ function goBack() {
               {{ form_start(form) }}
               {{ form_widget(form) }}
               {{ form_end(form) }}
+
              <!--  <input type="button" onClick="goback()" class="btn" value="Return to film"> -->
             </form>
                                 

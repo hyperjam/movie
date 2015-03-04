@@ -110,6 +110,23 @@ class DefaultController extends Controller
      //     return $this->render('ProjectFilmsBundle:Default:review.html.twig', array());
      // }
 
+public function getRefererRoute()
+  {
+    $request = $this->getRequest();
+
+    //look for the referer route
+    $referer = $request->headers->get('referer');
+    $lastPath = substr($referer, strpos($referer, $request->getBaseUrl()));
+    $lastPath = str_replace($request->getBaseUrl(), '', $lastPath);
+
+    $matcher = $this->get('router')->getMatcher();
+    $parameters = $matcher->match($lastPath);
+    $route = $parameters['_route'];
+
+    return $route;
+  }
+
+
 public function reviewAction(Request $request){
 
   $refleksja = new Review();
@@ -122,7 +139,20 @@ public function reviewAction(Request $request){
                         $em = $this->getDoctrine()->getManager();
                         $em->persist($refleksja);
                         $em->flush();
-                         return $this->redirect($this->generateUrl('home', array()));
+
+        //                 $ruta = $this->getRefererRoute();
+
+        // $locale = $request->get('_locale');
+        // $url = $this->get('router')->generate($ruta, array('_locale' => $locale));
+
+        // $this->getRequest()->getSession()->setFlash('notice', "your_message");   
+
+        // return $this->redirect($url);
+             
+
+                         
+
+                        // $this->redirect($this->generateUrl('', array()));
                 }
         return $this->render('ProjectFilmsBundle:Default:review.html.twig',  array('form' => $form->createView()));
     }

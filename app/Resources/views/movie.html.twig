@@ -30,7 +30,15 @@
     
 }
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    //$('#dialog').dialog();
+    $('#dialog_link').click(function() {
+        $('#dialog').dialog();
+        return false;
+    });
+});
+</script>
  </head>
 
 <body>
@@ -141,7 +149,13 @@
  {% if is_granted('IS_AUTHENTICATED_FULLY') %}
  <a class="btn btn-primary"  href="{{path ('home')}}">Borrow <span class="glyphicon glyphicon-chevron-right"></span></a> 
 {% else %}
-               <a class="btn btn-primary" onclick="myFunction()" href="">Borrow <span class="glyphicon glyphicon-chevron-right"></span></a> 
+
+
+       <a class="btn btn-primary" onclick="myFunction()" href="">Borrow <span class="glyphicon glyphicon-chevron-right"></span></a> 
+
+
+
+
  {% endif %} 
 
     
