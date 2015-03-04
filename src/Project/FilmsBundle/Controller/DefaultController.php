@@ -180,49 +180,6 @@ public function reviewAction(Request $request){
     // ... do something, like pass the $product object into a template
 }
     
-    
-       
-//          $session=$this->getRequest()->getSession();
-//          $em = $this->getDoctrine()->getEntityManager();
-//          $repository = $em->getRepository('Project\FilmsBundle\Entity\Client');
-        
-//          if($session->has('username')){
-//                 // $username = $session->get('username');
-//                 $username=$username->getUsername();
-//                  $password=$username->getPassword();
-//                  $userr = $repository->findOneBy(array('username'=>$username,'password'=>$password));
-                
-//                  $a=$_SERVER['HTTP_REFERER'];
-//                  $tokens = explode('/', $a);
-//                  $mid = $tokens[sizeof($tokens)-1];
-//                  $m=(int)$mid;
-                
-//                  $con=pg_connect("host=sbazy user=s175517 dbname=s175517 password=jjSKMFv6");
-//                  $q="Select client_id from client where username='$username'";
-//                  $r=pg_exec($con,$q);
-//                  $cid = pg_fetch_result($r, 0, 0);
-//                  $c=(int)$cid;
-                
-//                  $rv=$request->get('review');
-                
-//                  $query = "INSERT INTO review(review,film_id, client_id, ) VALUES ('$rv', $m,$c );";
-//                  $r=pg_exec($con,$query);
-//                  echo "<script type='text/javascript'>alert('Review was submitted!');</script>";
-//                  switch($mid){
-//                      case 1:
-//                          $mo='hobbit';
-//                          break;
-//                  }
-
-                  
-//                  if($userr){
-                     
-//                       return $this->render("ProjectFilmsBundle:Default:hobbit.html.twig", array());
-//                  }
-               
-           
-// return $this->render("ProjectFilmsBundle:Default:hobbit.html.twig", array());
-// }    
 
 
         public function loginAction(Request $request)
@@ -252,5 +209,94 @@ public function reviewAction(Request $request){
     }
     
 
+    /**
+ * all film action.
+ * @Route("/all" , name="all" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:all.html.twig")
+ */
+     public function allAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:all.html.twig', array());
+    }
+
+      /**
+ * action film action.
+ * @Route("/action" , name="action" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:action.html.twig")
+ */
+     public function actionAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:action.html.twig', array());
+    }
+
+ /**
+ * comedy film action.
+ * @Route("/comedy" , name="comedy" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:comedy.html.twig")
+ */
+     public function comedyAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:comedy.html.twig', array());
+    }
+
+     /**
+ * drama film action.
+ * @Route("/drama" , name="drama" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:drama.html.twig")
+ */
+     public function dramaAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:drama.html.twig', array());
+    }
+
+     /**
+ * fantasy film action.
+ * @Route("/fantasy" , name="fantasy" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:fantasy.html.twig")
+ */
+     public function fantasyAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:fantasy.html.twig', array());
+    }
+
+     /**
+ * mystery film action.
+ * @Route("/mystery" , name="mystery" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:mystery.html.twig")
+ */
+     public function mysteryAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:mystery.html.twig', array());
+    }
+
+         /**
+ * scifi film action.
+ * @Route("/scifi" , name="scifi" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Films:scifi.html.twig")
+ */
+     public function scifiAction()
+    {
+        return $this->render('ProjectFilmsBundle:Films:scifi.html.twig', array());
+    }
+
+ /**
+ * borrow film action.
+ * @Route("/borrow" , name="borrow" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:borrow.html.twig")
+ */
+     public function borrowAction()
+    {
+
+        
+        return $this->render('ProjectFilmsBundle:Default:borrow.html.twig', array());
+    }
 }
 

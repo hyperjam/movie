@@ -1,1 +1,104 @@
-s
+{% extends "::genre.html.twig" %}
+
+{% block film_genres %} 
+<a href="{{path ('all')}}" class="list-group-item " >All Genres</a>
+<a href="{{path ('action')}}" class="list-group-item ">Action</a>
+<a href="{{path ('comedy')}}" class="list-group-item ">Comedy</a>
+<a href="{{path ('drama')}}" class="list-group-item active">Drama</a>
+<a href="{{path ('mystery')}}" class="list-group-item">Mystery</a>
+<a href="{{path ('fantasy')}}" class="list-group-item">Fantasy</a>
+<a href="{{path ('scifi')}}" class="list-group-item">Sci-fi</a>
+{% endblock %} 
+
+{% block gname %} Drama{% endblock %}  
+{% block about%}Dramas are serious, plot-driven presentations, portraying realistic characters, settings, life situations, and stories involving intense character development and interaction. Usually, they are not focused on special-effects, comedy, or action, Dramatic films are probably the largest film genre, with many subsets.{% endblock %} 
+{% block films %} 
+<div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+
+                        <div class="thumbnail">
+                            <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
+                            <div class="caption">
+                                <h4 class="pull-right">$10.99</h4>
+                                <h4><a href="{{path ('first')}}">Birdman</a>
+                                </h4>
+
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div> <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Gone Girl</a>
+                                </h4>
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-primary">Mystery</button>
+
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">The Hunger Games </a>
+                                </h4>
+                              
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+</div>
+{% endblock %}  

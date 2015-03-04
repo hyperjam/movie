@@ -1,1 +1,76 @@
-d
+{% extends "::genre.html.twig" %}
+
+{% block film_genres %} 
+<a href="{{path ('all')}}" class="list-group-item " >All Genres</a>
+<a href="{{path ('action')}}" class="list-group-item ">Action</a>
+<a href="{{path ('comedy')}}" class="list-group-item ">Comedy</a>
+<a href="{{path ('drama')}}" class="list-group-item ">Drama</a>
+<a href="{{path ('mystery')}}" class="list-group-item active">Mystery</a>
+<a href="{{path ('fantasy')}}" class="list-group-item ">Fantasy</a>
+<a href="{{path ('scifi')}}" class="list-group-item">Sci-fi</a>
+{% endblock %} 
+
+{% block gname %} Mystery{% endblock %} 
+{% block about%} A Mystery film centers on a person of authority, usually a detective, that is trying to solve a mysterious crime. The main protagonist uses clues, investigation, and logical reasoning. The biggest element in these films is a sense of “whodunit” suspense, usually created through visual cues and unusual plot twists.{% endblock %} 
+{% block films %} 
+<div class="row">
+ <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">Gone Girl</a>
+                                </h4>
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-primary">Mystery</button>
+
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="#">The Maze Runner</a>
+                                </h4>
+                               
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+<button type="button" class="btn btn-xs btn-primary">Mystery</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+</div>
+{% endblock %}  

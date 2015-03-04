@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> BorrowingFilmOnline</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap-theme.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/heroic-features.css')  }} " rel="stylesheet" />
+   <link href=  "{{asset ('bundles/projectfilms/css/shop-homepage.css')  }} " rel="stylesheet" />
+   {% endblock %}
+<style>
+.jumbotron {
+     padding: 0.4em 0.2em;
+     
+     color: black;
+     background-color: #adebad ;
+     
+     
+    p {
+        font-size: 1.2em;
+        font-weight: 200;
+        font-weight: lighter;
+        .btn {
+            padding: 0.2em;
+        }
+    }
+    
+}
+</style>
+
+ </head>
+
+<body>
+<div>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{path ('home')}}"> Back</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+            </div>
+        </div>
+    </nav>
+
+<script>
+function goBack() {
+   window.history.back()
+}
+
+
+    </script>
+
+    <script>
+    function goB() {
+   alert("Your review was succesfully added. Check list of reviews to read other users opinions on films!");
+   history.back();
+ }
+</script>
+
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">  
+         <div class="col-md-6">
+         	 <h3 class="dark-grey">Terms and conditions of payment</h3>
+         	 <p class="text-justify"> <bold>1. Introduction to the terms and conditions </bold ><br/> 1.1.The following terms (the "Terms") apply to any use by a visitor (the "User") of the BorrowFilmsOnline Web Site (the "Web Site"), and should be read carefully before any such use. 
+ 
+1.2 By accessing or using the Web Site, the User accepts and agrees to be legally bound by these Terms and acknowledges that BorrowFilmsOnline, as the owner and operator of the Web Site, has the right to amend or vary these Terms and any of the contents of the Web Site from time to time at its sole discretion.  Amendments or variations will take effect when they are posted on the Web Site and, as a result, the User should check the current version of the Terms each time he/she uses the Web Site.  These Terms, as amended or varied from time to time, apply to all use of and access to the Web Site, both now and in the future.
+
+1.3 Additional terms and conditions may apply for any purchases made through the Web Site.  If so, you will be prompted to view such additional terms and conditions on our Web Site at the time of such purchases and those terms and conditions will apply in addition to these Terms to the extent that the context permits.</p>
+<p class="text-justify"><bold> 2. Online ordering of film (only available on Web Site)</bold><br/> 2.1 By requesting borrowing items through the Web Site, the User is placing an order  to exchange for specific right to watch film on the Terms that the order is only deemed accepted by and binding on BorrowFilmsOnline once it has processed valid payment and sent the User email confirmation of the User's order.  BorrowFilmsOnline reserves the right not to accept orders. </p>
+<p class="text-justify"><bold> 3. Prices, payment and VAT</bold><br/> 3.1 Borrowing made via the Web Site must be paid for using debit, credit or cash.
+
+3.2 All prices displayed on the Web Site (unless otherwise stated) are inclusive of VAT (where applicable).
+
+3.3 All transaction details, including payment card details, are encrypted using Secure Sockets Layer. Further, CCL seeks to ensure that bank details are never transmitted in clear text through the BorrowFilmsOnline booking system. </p>
+         </div>              
+            <div class="col-md-6">
+                 <h3 class="dark-grey">Order film</h3>
+                
+                <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('borrow')}}" onSubmit=" goB();" >
+
+                  <!-- project_films_review alert('Your review was succesfully added. Check list of reviews to read other users reviews') -->
+              <!-- <label for="review"></label>
+              <textarea class="form-control" rows="10" name="review" id="review" placeholder="Place for your review"></textarea>
+              </br></br>
+              <button type="submit"  class="btn btn-large btn-success">Submit</button> -->
+             
+
+             <!--  <input type="button" onClick="goback()" class="btn" value="Return to film"> -->
+            </form>
+                                
+                
+                              
+            
+            </div>
+        
+            
+        </div>
+
+    </section>
+    
+</div>
+
+
+
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" style="position:absolute;
+   bottom:0;">
+                <!--  <p style="position:absolute;
+   bottom:0;">Copyright &copy; 2015</p> -->
+                </div>
+            </div>
+        </footer>
+    </div>  <!-- /.container -->
+ <hr>
+           
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    
+</body>
+</html>

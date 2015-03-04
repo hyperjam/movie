@@ -49,9 +49,14 @@
 {% if error %}
     <div>{{ error.message }}</div>
 {% endif %}
-
-<form action="{{ path('login_check') }}" method="post">
-	<div class="form-group col-lg-12">
+ <script>
+    function goB() {
+  
+   history.back();
+ }
+</script>
+<form action="{{ path('login_check') }}" method="post" >
+	<div class="form-group col-lg-12" >
           <label for="username">Username</label>
            <input type="text" id="username" name="_username"  />
        </div>
