@@ -299,6 +299,39 @@ public function reviewAction(Request $request){
 
         $refleksja = new Orders();
         $refleksja->setClientname($this->getUser()->getUsername());
+        
+
+// $refleksj = new Client();
+//         $refleksj->getEmail($this->getUser()->getEmail());
+
+//         $url = 'https://mandrillapp.com/api/1.0/messages/send.json';
+// $params = [
+// 'message' => array(
+// 'subject' => 'You have made an order',
+// 'text' => 'ggg',
+// 'html' => '<p> ffgg</p>',
+// 'from_email' => 'annahyperjam@gmail.com ',
+// 'to' => array(
+// array(
+// 'email' => $refleksj,
+// 'name' => ''
+// )
+// )
+// )
+// ];
+// $params['key'] = 'q3_8uQMzxF2IlP53NU3-5A';
+// $params = json_encode($params);
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_URL, $url);
+// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:
+// application/json'));
+// curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+// $head = curl_exec($ch);
+// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+// curl_close($ch);
+
+
+
         $form = $this->createForm(new OrdersType(), $refleksja);
         if ($request->isMethod('POST')
                 && $form->handleRequest($request)
@@ -322,7 +355,8 @@ public function reviewAction(Request $request){
 public function listorderAction()
 {
 
-
+$usr= $this->get('security.context')->getToken()->getUser();
+$usr->getEmail();
 
 
 $em = $this->getDoctrine()->getManager();

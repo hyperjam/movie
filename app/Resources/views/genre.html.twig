@@ -57,7 +57,7 @@
             {{ app.user.username }}
                  {% endif %}</a></li> 
        <li><a href=""><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
-       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  
+       <li><a href="{{path ('project_films_listorder')}}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  
         <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 
         {% else %}
 
