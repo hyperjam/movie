@@ -1,0 +1,104 @@
+{% extends "::genre.html.twig" %}
+
+{% block film_genres %} 
+<a href="{{path ('all')}}" class="list-group-item " >All Genres</a>
+<a href="{{path ('action')}}" class="list-group-item ">Action</a>
+<a href="{{path ('comedy')}}" class="list-group-item active">Comedy</a>
+<a href="{{path ('drama')}}" class="list-group-item">Drama</a>
+<a href="{{path ('mystery')}}" class="list-group-item">Mystery</a>
+<a href="{{path ('fantasy')}}" class="list-group-item">Fantasy</a>
+<a href="{{path ('scifi')}}" class="list-group-item">Sci-fi</a>
+{% endblock %} 
+
+{% block gname %}Comedy {% endblock %}  
+{% block about%} Comedies are light-hearted plots consistently and deliberately designed to amuse and provoke laughter (with one-liners, jokes, etc.) by exaggerating the situation, the language, action, relationships and characters. This section describes various forms of comedy through cinematic history, including slapstick, screwball, spoofs and parodies, romantic comedies, black comedy (dark satirical comedy), and more. {% endblock %}
+{% block films %} 
+<div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+
+                        <div class="thumbnail">
+                            <a href="{{path ('bird')}}"><img src="http://www.kinoteatrslonko.pl/www/wp-content/uploads/2015/02/Birdman-cover-300x150.jpg" style="height:150px;width : 320px;"alt=""> </a>
+                            <div class="caption">
+                                <h4 class="pull-right">$10.99</h4>
+                                <h4><a href="{{path ('bird')}}">Birdman</a>
+                                </h4>
+
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('bird')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+ <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                          <a href="{{path ('gurd')}}">  <img src="http://www.cinemageekly.com/wp-content/uploads/2014/08/guardian-of-the-galaxy-poster-300x150.jpg" style="height:150px;width : 320px;"alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="{{path ('gurd')}}">Guardian of the Galaxy</a>
+                                </h4>
+                               
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+<button type="button" class="btn btn-xs btn-danger">Sci-fi</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('gurd')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">6 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+   <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{path ('king')}}"><img src="http://cinema.usc.edu/userfiles/A0127948311B99D1C02CF7783648D35EBD92E9B2images/KingsmanPoster.jpg"  style="height:150px;width : 320px;" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="{{path ('king')}}">Kingsman </a>
+                                </h4>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('king')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+{% endblock %} 

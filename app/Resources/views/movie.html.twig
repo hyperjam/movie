@@ -30,7 +30,15 @@
     
 }
 </style>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    //$('#dialog').dialog();
+    $('#dialog_link').click(function() {
+        $('#dialog').dialog();
+        return false;
+    });
+});
+</script>
  </head>
 
 <body>
@@ -47,44 +55,154 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"> BorrowingFilmOnline</a>
+                <a class="navbar-brand" href="{{path ('home')}}"> BorrowingFilmOnline</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-        <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-           <button type="submit" class="btn btn-primary">Sign in</button>
-            
-          </form>
+        {% if is_granted('ROLE_USER') %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a href="" class="active"><span class="glyphicon glyphicon-user"></span>
+            {{ app.user.username }}
+                 {% endif %}</a></li> 
+       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
+       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  
+        <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 
+        {% else %}
+
+        <li><a href="{{path ('login')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+     
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li><a href="{{path ('signup')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a>
+          
         </li>
-    
-        <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+       {% endif %} 
+
+
+
       </ul> 
             </div>
         </div>
     </nav>
 
 
+<div class="container">
 
+      
+
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="">
+
+{% block film_cover %} 
+                    <img class="img-responsive" src="http://placehold.it/700x300"  style="height:500px;width : 500px;" alt="">
+
+{% endblock %}                    
+                </a>
+
+                <br/>
+                <h3 class="page-header"><span class="glyphicon glyphicon-facetime-video"></span> Watch film trailer</h2 >
+                <br/>
+{% block film_video %}
+  <video width="450" controls>
+    <source src="{{ asset('bundles/projectfilms/video/a.mp4') }}" type="video/mp4"></source>
+      <source src="{{ asset('bundles/projectfilms/video/a.mp4') }}" type="video/ogg">
+  </video>
+{% endblock %}
+
+
+            </div>
+            <div class="col-md-7">
+                
+                <h1 class="page-header">
+{% block film_name %} 
+                  
+                    {% endblock %}   
+                </h1>
+               
+                <p class=" text-justify">
+                  Director:
+{% block film_director %} 
+                 
+                    {% endblock %} 
+                </p>
+
+                <p class=" text-justify">
+                  Year:
+{% block film_year %} 
+                 
+                    {% endblock %} 
+                </p>
+
+<p class=" text-justify">List of actors:
+{% block film_actors %} 
+                  
+                    {% endblock %}  
+</p>
+<p class=" text-justify">Price:
+{% block film_price %} 
+                  
+                    {% endblock %}  
+</p>
+                <p class=" text-justify">
+                  Description:
+{% block film_description %} 
+                 
+                    {% endblock %} 
+                </p>
+
+                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                 <script>
+
+  </script>
+            {% else %}<script>
+            function myFunction() {  alert("Borrow films cannot be done unless and until being registered or signed in.Please, register  or login."); }
+  </script>
+                  {% endif %} 
+
+
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+ <a class="btn btn-primary"  href="{{path ('borrow')}}">Borrow <span class="glyphicon glyphicon-chevron-right"></span></a> 
+{% else %}
+
+
+       <a class="btn btn-primary" onclick="myFunction()" href="">Borrow <span class="glyphicon glyphicon-chevron-right"></span></a> 
+
+
+
+
+ {% endif %} 
+
+    
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="btn btn-success"  href="{{path ('project_films_review')}}">Add review <span class="glyphicon glyphicon-chevron-right"></span></a>
+ {% endif %} 
+                <!-- Button trigger modal -->
+                 
+            </div>
+        </div>
 
 
         <hr>
+        <p>Copyright &copy; 2015</p>
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2015</p>
+                <div class="col-lg-12"  style="position:absolute; bottom:0;">
+                    
                 </div>
             </div>
         </footer>
 
 
     </div> 
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

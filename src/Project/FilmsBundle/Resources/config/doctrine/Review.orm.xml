@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity repository-class="Project\FilmsBundle\Entity\ReviewRepository" name="Project\FilmsBundle\Entity\Review">
+  	 <indexes>
+       <index name="titlet" columns="titlet"/>
+    </indexes>
+    <id name="reviewId" type="integer" column="reviewId">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="topreviewed" type="integer" column="topreviewed" />
+    <field name="review" type="string" column="review" length="255" />
+    <field name="author" type="string" column="author" />
+    <many-to-one field="titlet" target-entity="Film">
+      <join-columns>
+        <join-column name="titlet" referenced-column-name="titlet"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

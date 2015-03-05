@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> BorrowingFilmOnline</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap-theme.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/heroic-features.css')  }} " rel="stylesheet" />
+   <link href=  "{{asset ('bundles/projectfilms/css/shop-homepage.css')  }} " rel="stylesheet" />
+   {% endblock %}
+<style>
+.jumbotron {
+     padding: 0.4em 0.2em;
+     
+     color: black;
+     background-color: #adebad ;
+     
+     
+    p {
+        font-size: 1.2em;
+        font-weight: 200;
+        font-weight: lighter;
+        .btn {
+            padding: 0.2em;
+        }
+    }
+
+}
+</style>
+
+ </head>
+
+<body >
+
+	<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{path ('home')}}"> BorrowingFilmOnline</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        {% if is_granted('ROLE_USER') %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <li><a href="" class="active"><span class="glyphicon glyphicon-user"></span>
+            {{ app.user.username }}
+                 {% endif %}</a></li> 
+       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
+       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  
+        <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 
+        {% else %}
+
+        <li><a href="{{path ('login')}}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+     
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+        <li><a href="{{path ('signup')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a>
+          
+        </li>
+       {% endif %} 
+
+      </ul>
+
+
+                 <!-- <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">List of reviews</a>
+                    </li>
+ 
+                    </li>
+                </ul> -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="list-group">
+                    
+                    <p  class="list-group-item " style="text-align : center; " >Reviews</p>
+                    <a href="{{path ('project_films_listreviews')}}" class="list-group-item active" >View film reviews</a>
+                </div>
+                <!-- <div class="list-group">
+                    
+                    <p  class="list-group-item " style="text-align : center; " >Filter by genre</p>
+                    <a href=""{{path ('home')}}"" class="list-group-item active" >All Genres</a>
+                    <a href="" class="list-group-item">Action</a>
+                    <a href="" class="list-group-item">Comedy</a>
+                    <a href="" class="list-group-item">Drama</a>
+                    <a href="" class="list-group-item">Mystery</a>
+                    <a href="" class="list-group-item">Fantasy</a>
+                    <a href="" class="list-group-item">Sci-fi</a>
+                    
+                </div> -->
+
+            </div>
+
+<div class="col-md-9">
+
+<div class="well">
+
+                    <div >
+                    	<h2 class="lead">Film's reviews <h2>
+                        <div class="text-right">
+                     	<a class="btn btn-success" href="{{path ('project_films_review')}}">Leave a Review</a>
+                     </div> 
+                    </div>                
+                    <hr>
+{% for refleksja in review %}
+                    <div class="row">
+                        <div class="col-md-12">
+                        	<h4>Author: {{ refleksja.author }}</h4>
+                            
+                            <span class="pull-right">Film: {{ refleksja.titlet }}</span>
+                           <p> Review:  {{ refleksja.review }}</p>
+                        </div>
+                    </div>
+                    <hr>
+{% endfor %}
+</div>		
+
+     <p style="bottom:0;"> Copyright &copy; 2015</p>		
+</body>
+</html>
+
+
+	
+
+	
+	

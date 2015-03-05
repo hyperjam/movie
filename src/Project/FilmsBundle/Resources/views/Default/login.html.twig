@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> BorrowingFilmOnline</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap-theme.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/heroic-features.css')  }} " rel="stylesheet" />
+   <link href=  "{{asset ('bundles/projectfilms/css/shop-homepage.css')  }} " rel="stylesheet" />
+   {% endblock %}
+
+   <link href="{{ asset('bundles/projectfilms/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+ </head>
+
+ <body  left="25px">
+<div>
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{path ('home')}}"> BorrowingFilmOnline</a>
+            </div>
+            <!-- Collect the nav links, forms, and other c ontent for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+    <section class="container">
+    <div class="container-page">  
+           <div class="col-md-12">
+             <h3 class="dark-grey">Login</h3>
+             <br/>
+
+
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+ <script>
+    function goB() {
+  
+   history.back();
+ }
+</script>
+<form action="{{ path('login_check') }}" method="post" >
+	<div class="form-group col-lg-12" >
+          <label for="username">Username</label>
+           <input type="text" id="username" name="_username"  />
+       </div>
+
+    <div class="form-group col-lg-12">
+          <label for="password">Password:</label>
+            <input type="password" id="password" name="_password" />
+       </div>
+
+    {#
+         redirect URL :
+        <input type="hidden" name="_target_path" value="/account" />
+    #}
+
+    <input type="submit" value="Login" />
+</form>
+     
+
+           </div>
+      <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" style="position:absolute; bottom:0;">
+                    <p >Copyright &copy; 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </section>
+    </div>
+
+
+

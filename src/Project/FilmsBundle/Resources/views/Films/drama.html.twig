@@ -1,0 +1,107 @@
+{% extends "::genre.html.twig" %}
+
+{% block film_genres %} 
+<a href="{{path ('all')}}" class="list-group-item " >All Genres</a>
+<a href="{{path ('action')}}" class="list-group-item ">Action</a>
+<a href="{{path ('comedy')}}" class="list-group-item ">Comedy</a>
+<a href="{{path ('drama')}}" class="list-group-item active">Drama</a>
+<a href="{{path ('mystery')}}" class="list-group-item">Mystery</a>
+<a href="{{path ('fantasy')}}" class="list-group-item">Fantasy</a>
+<a href="{{path ('scifi')}}" class="list-group-item">Sci-fi</a>
+{% endblock %} 
+
+{% block gname %} Drama{% endblock %}  
+{% block about%}Dramas are serious, plot-driven presentations, portraying realistic characters, settings, life situations, and stories involving intense character development and interaction. Usually, they are not focused on special-effects, comedy, or action, Dramatic films are probably the largest film genre, with many subsets.{% endblock %} 
+{% block films %} 
+<div class="row">
+
+                     <div class="col-sm-4 col-lg-4 col-md-4">
+
+                        <div class="thumbnail">
+                            <a href="{{path ('bird')}}"><img src="http://www.kinoteatrslonko.pl/www/wp-content/uploads/2015/02/Birdman-cover-300x150.jpg" style="height:150px;width : 320px;"alt=""> </a>
+                            <div class="caption">
+                                <h4 class="pull-right">$10.99</h4>
+                                <h4><a href="{{path ('bird')}}">Birdman</a>
+                                </h4>
+
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-warning">Comedy</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('bird')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+ <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                          <a href="{{path ('gone')}}">  <img src="http://taynement.com/wp-content/uploads/2014/10/gone_girl_40653_poster.jpg"  style="height:150px;width : 320px;" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="{{path ('gone')}}">Gone Girl</a>
+                                </h4>
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-primary">Mystery</button>
+
+
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('gone')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                           <a href="{{path ('hung')}}"> <img src="http://kulisyfilmow.pl/_content/wp-content/uploads/2015/01/igrzyska-smierci-3-150x200.jpg"  style="height:150px;width : 320px;" alt=""></a>
+                            <div class="caption">
+                                <h4 class="pull-right">$15.99</h4>
+                                <h4><a href="{{path ('hung')}}">The Hunger Games </a>
+                                </h4>
+                              
+<button type="button" class="btn btn-xs btn-info ">Drama</button>
+<button type="button" class="btn btn-xs btn-default">Action</button>
+
+                        <h4>
+                             <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
+                             <a class="btn btn-primary" href="{{path ('hung')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                        </h4>
+                            </div>
+                            <!-- <div class="ratings">
+                                <p class="pull-right">5 reviews</p>
+                                <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+</div>
+{% endblock %}  
