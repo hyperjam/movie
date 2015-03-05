@@ -18,10 +18,10 @@
                     <div class="col-sm-4 col-lg-4 col-md-4">
 
                         <div class="thumbnail">
-                            <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
+                            <a href="{{path ('bird')}}"><img src="http://www.kinoteatrslonko.pl/www/wp-content/uploads/2015/02/Birdman-cover-300x150.jpg" style="height:150px;width : 320px;"alt=""> </a>
                             <div class="caption">
                                 <h4 class="pull-right">$10.99</h4>
-                                <h4><a href="{{path ('first')}}">Birdman</a>
+                                <h4><a href="{{path ('bird')}}">Birdman</a>
                                 </h4>
 
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
@@ -29,7 +29,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('bird')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -46,10 +46,10 @@
                     </div>
  <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                          <a href="{{path ('gurd')}}">  <img src="http://www.cinemageekly.com/wp-content/uploads/2014/08/guardian-of-the-galaxy-poster-300x150.jpg" style="height:150px;width : 320px;"alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Gardian of the Galaxy</a>
+                                <h4><a href="{{path ('gurd')}}">Guardian of the Galaxy</a>
                                 </h4>
                                
 <button type="button" class="btn btn-xs btn-default">Action</button>
@@ -58,7 +58,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('gurd')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -73,19 +73,20 @@
                             </div> -->
                         </div>
                     </div>
+                    
    <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                            <a href="{{path ('king')}}"><img src="http://cinema.usc.edu/userfiles/A0127948311B99D1C02CF7783648D35EBD92E9B2images/KingsmanPoster.jpg"  style="height:150px;width : 320px;" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Kingsman </a>
+                                <h4><a href="{{path ('king')}}">Kingsman </a>
                                 </h4>
 <button type="button" class="btn btn-xs btn-default">Action</button>
 <button type="button" class="btn btn-xs btn-warning">Comedy</button>
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('king')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -99,4 +100,5 @@
                                 </p>
                             </div> -->
                         </div>
+                    </div>
 {% endblock %} 

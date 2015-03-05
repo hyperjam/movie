@@ -331,6 +331,12 @@ class Film
      */
     protected $reviewId;
 
+ /**
+     *
+     * @ORM\OneToMany(targetEntity="Orders", mappedBy="titlet")
+     */
+    protected $order_id;
+
 
     public function __toString()
 {
@@ -349,7 +355,11 @@ class Film
     public function __construct()
     {
         $this->review_id = new \Doctrine\Common\Collections\ArrayCollection();
+         $this->order_id = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+
+
     /**
      * Add refleksje
      *
@@ -370,5 +380,28 @@ class Film
     public function getRefleksje()
     {
         return $this->review_id;
+    }
+
+
+    /**
+     * Add order
+     *
+     * @param \Project\FilmsBundle\Entity\Review $order_id
+     * @return Film
+     */
+    public function addOrder(\Project\FilmsBundle\Entity\Orders $order_id )
+    {
+        $this->order_id [] = $order_id ;
+        return $this;
+    }
+
+     /**
+     * Get order
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrder()
+    {
+        return $this->$order_id;
     }
 }

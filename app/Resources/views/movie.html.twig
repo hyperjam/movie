@@ -120,6 +120,21 @@ $(document).ready(function() {
                   
                     {% endblock %}   
                 </h1>
+               
+                <p class=" text-justify">
+                  Director:
+{% block film_director %} 
+                 
+                    {% endblock %} 
+                </p>
+
+                <p class=" text-justify">
+                  Year:
+{% block film_year %} 
+                 
+                    {% endblock %} 
+                </p>
+
 <p class=" text-justify">List of actors:
 {% block film_actors %} 
                   
@@ -131,8 +146,9 @@ $(document).ready(function() {
                     {% endblock %}  
 </p>
                 <p class=" text-justify">
-{% block film_description %} 
                   Description:
+{% block film_description %} 
+                 
                     {% endblock %} 
                 </p>
 

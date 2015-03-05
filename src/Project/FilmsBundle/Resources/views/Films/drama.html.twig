@@ -15,13 +15,13 @@
 {% block films %} 
 <div class="row">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                     <div class="col-sm-4 col-lg-4 col-md-4">
 
                         <div class="thumbnail">
-                            <a href="http://www.google.com"><img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt=""> </a>
+                            <a href="{{path ('bird')}}"><img src="http://www.kinoteatrslonko.pl/www/wp-content/uploads/2015/02/Birdman-cover-300x150.jpg" style="height:150px;width : 320px;"alt=""> </a>
                             <div class="caption">
                                 <h4 class="pull-right">$10.99</h4>
-                                <h4><a href="{{path ('first')}}">Birdman</a>
+                                <h4><a href="{{path ('bird')}}">Birdman</a>
                                 </h4>
 
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
@@ -29,7 +29,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('bird')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -43,12 +43,14 @@
                                 </p>
                             </div> -->
                         </div>
-                    </div> <div class="col-sm-4 col-lg-4 col-md-4">
+                    </div>
+                    
+ <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                          <a href="{{path ('gone')}}">  <img src="http://taynement.com/wp-content/uploads/2014/10/gone_girl_40653_poster.jpg"  style="height:150px;width : 320px;" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Gone Girl</a>
+                                <h4><a href="{{path ('gone')}}">Gone Girl</a>
                                 </h4>
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
 <button type="button" class="btn btn-xs btn-primary">Mystery</button>
@@ -57,7 +59,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('gone')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -72,12 +74,13 @@
                             </div> -->
                         </div>
                     </div>
+
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                           <a href="{{path ('hung')}}"> <img src="http://kulisyfilmow.pl/_content/wp-content/uploads/2015/01/igrzyska-smierci-3-150x200.jpg"  style="height:150px;width : 320px;" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">The Hunger Games </a>
+                                <h4><a href="{{path ('hung')}}">The Hunger Games </a>
                                 </h4>
                               
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
@@ -85,7 +88,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('hung')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">

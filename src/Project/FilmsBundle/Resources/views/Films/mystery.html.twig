@@ -14,12 +14,13 @@
 {% block about%} A Mystery film centers on a person of authority, usually a detective, that is trying to solve a mysterious crime. The main protagonist uses clues, investigation, and logical reasoning. The biggest element in these films is a sense of “whodunit” suspense, usually created through visual cues and unusual plot twists.{% endblock %} 
 {% block films %} 
 <div class="row">
- <div class="col-sm-4 col-lg-4 col-md-4">
+
+  <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150"  style="height:150px;width : 320px;" alt="">
+                          <a href="{{path ('gone')}}">  <img src="http://taynement.com/wp-content/uploads/2014/10/gone_girl_40653_poster.jpg"  style="height:150px;width : 320px;" alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">Gone Girl</a>
+                                <h4><a href="{{path ('gone')}}">Gone Girl</a>
                                 </h4>
 <button type="button" class="btn btn-xs btn-info ">Drama</button>
 <button type="button" class="btn btn-xs btn-primary">Mystery</button>
@@ -28,7 +29,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('gone')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">
@@ -43,12 +44,14 @@
                             </div> -->
                         </div>
                     </div>
+
+
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                         <a href="{{path ('maze')}}">   <img src="http://www.soundtrackgeek.com/v2/wp-content/uploads/2014/09/The-Maze-Runner-Soundtrack-200x150.jpg" style="height:150px;width : 320px;"alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="#">The Maze Runner</a>
+                                <h4><a href="{{path ('maze')}}">The Maze Runner</a>
                                 </h4>
                                
 <button type="button" class="btn btn-xs btn-default">Action</button>
@@ -57,7 +60,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('maze')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">

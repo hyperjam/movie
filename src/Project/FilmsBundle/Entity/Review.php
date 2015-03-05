@@ -19,8 +19,7 @@ class Review
      * @var integer
      * @ORM\Column(name="reviewId",type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="SEQUENCE")
-     * @ORM\SequenceGenerator(sequenceName="review_reviewId_seq", allocationSize=1, initialValue=1)
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $reviewId;
 

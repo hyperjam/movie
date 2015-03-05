@@ -17,8 +17,8 @@ project_films_signup:
     type:     annotation
 
 project_films_borrow:
-    resource: "@ProjectFilmsBundle/Controller"
-    type:     annotation
+    path:     /borrow
+    defaults: { _controller: "ProjectFilmsBundle:Default:borrow" }
 
 project_films_new:
     path:     /new
@@ -41,6 +41,10 @@ project_films_review:
 project_films_listreviews:
     path:     /listreviews
     defaults: { _controller: "ProjectFilmsBundle:Default:listreviews"}
+
+project_films_listorder:
+    path:     /listorder
+    defaults: { _controller: "ProjectFilmsBundle:Default:listorder"}
 
 project_films_action:
     resource: "@ProjectFilmsBundle/Controller"
@@ -67,5 +71,49 @@ project_films_scifi:
     type:     annotation
 
 project_films_all:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_bird:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_div:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_edge:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_gone:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_gurd:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_hung:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_int:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_jur:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_king:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_luce:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_maze:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation

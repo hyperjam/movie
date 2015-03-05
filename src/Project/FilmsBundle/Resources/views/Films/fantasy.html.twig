@@ -14,13 +14,12 @@
 {% block about%} Unlike science fiction films that base their content upon some degree of scientific truth, take the audience to netherworld, fairy-tale places where events are unlikely to occur in real life. In mythological or legendary times, they transcend the bounds of human possibility and physical laws. Fantasy films are often in the context of the imagination, dreams, or hallucinations of a character or within the projected vision of the storyteller. Fantasy films often have an element of magic, myth, wonder, escapism, and the extraordinary. They may appeal to both children and adults, depending upon the particular film. {% endblock %}  
 {% block films %} 
 <div class="row">
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+<div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" style="height:150px;width : 320px;"alt="">
+                          <a href="{{path ('hobbit')}}">  <img src="http://www.jadekerrion.com/wp-content/uploads/2014/01/TheHobbit-300x150.jpg" style="height:150px;width : 320px;"alt=""></a>
                             <div class="caption">
                                 <h4 class="pull-right">$15.99</h4>
-                                <h4><a href="hobbit">The Hobbit III</a>
+                                <h4><a href="{{path ('hobbit')}}">The Hobbit III</a>
                                 </h4>
                                
 <button type="button" class="btn btn-xs btn-success">Fantasy</button>
@@ -28,7 +27,7 @@
 
                         <h4>
                              <!-- <a href="#" class="btn btn-default btn-sm">More Info</a> -->
-                             <a class="btn btn-primary" href="">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
+                             <a class="btn btn-primary" href="{{path ('hobbit')}}">View More<span class="glyphicon glyphicon-chevron-right"></span></a>
                         </h4>
                             </div>
                             <!-- <div class="ratings">

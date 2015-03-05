@@ -4,21 +4,21 @@ project_films:
 
 
 
-student_sri:
-    resource: "@StudentSriBundle/Resources/config/routing.yml"
-    prefix:   /
+# student_sri:
+#     resource: "@StudentSriBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-student_zebra:
-    resource: "@StudentZebraBundle/Resources/config/routing.yml"
-    prefix:   /
+# student_zebra:
+#     resource: "@StudentZebraBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-student_shrimp_menu:
-    resource: "@StudentShrimpMenuBundle/Resources/config/routing.yml"
-    prefix:   /
+# student_shrimp_menu:
+#     resource: "@StudentShrimpMenuBundle/Resources/config/routing.yml"
+#     prefix:   /
 
-shrimps:
-    resource: "@ShrimpsBundle/Resources/config/routing.yml"
-    prefix:   /
+# shrimps:
+#     resource: "@ShrimpsBundle/Resources/config/routing.yml"
+#     prefix:   /
 
 hello:
     resource: "@HelloBundle/Resources/config/routing.yml"

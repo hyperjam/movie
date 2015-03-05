@@ -87,22 +87,31 @@ function goBack() {
 3.2 All prices displayed on the Web Site (unless otherwise stated) are inclusive of VAT (where applicable).
 
 3.3 All transaction details, including payment card details, are encrypted using Secure Sockets Layer. Further, CCL seeks to ensure that bank details are never transmitted in clear text through the BorrowFilmsOnline booking system. </p>
-         </div>              
+         </div>  
+
+         <script>
+    function goB() {
+   alert("Your have ordered the film!");
+   history.back();
+ }
+</script>            
             <div class="col-md-6">
                  <h3 class="dark-grey">Order film</h3>
                 
-                <form id="add"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('borrow')}}" onSubmit=" goB();" >
+                <form id="borrow"  class="form-horizontal"  enctype="multipart/form-data" method="POST" action="{{path('project_films_borrow')}}" onSubmit="alert('You have borrowed the film.');" >
 
-                  <!-- project_films_review alert('Your review was succesfully added. Check list of reviews to read other users reviews') -->
+                  <!-- project_films_review alert('Your review was succesfully added. Check list of reviews to read other users reviews') --onSubmit=" goB();">
               <!-- <label for="review"></label>
               <textarea class="form-control" rows="10" name="review" id="review" placeholder="Place for your review"></textarea>
               </br></br>
               <button type="submit"  class="btn btn-large btn-success">Submit</button> -->
-             
+              {{ form_start(form) }}
+              {{ form_widget(form) }}
+              <br/>
+              {{ form_end(form) }}
 
              <!--  <input type="button" onClick="goback()" class="btn" value="Return to film"> -->
-            </form>
-                                
+            </form>          
                 
                               
             

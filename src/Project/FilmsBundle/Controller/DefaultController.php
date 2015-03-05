@@ -10,8 +10,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Project\FilmsBundle\Entity\Client;
 use Project\FilmsBundle\Entity\Film;
 use Project\FilmsBundle\Entity\Review;
+use Project\FilmsBundle\Entity\Orders;
 use Project\FilmsBundle\Form\ClientType;
 use Project\FilmsBundle\Form\ReviewType;
+use Project\FilmsBundle\Form\OrdersType;
 
 class DefaultController extends Controller
 {
@@ -152,7 +154,7 @@ public function reviewAction(Request $request){
 
                          
 
-                        // $this->redirect($this->generateUrl('', array()));
+                        return $this->redirect($this->generateUrl('home', array()));
                 }
         return $this->render('ProjectFilmsBundle:Default:review.html.twig',  array('form' => $form->createView()));
     }
@@ -292,11 +294,169 @@ public function reviewAction(Request $request){
  * @Method({"GET", "POST"})
  * @Template("ProjectFilmsBundle:Default:borrow.html.twig")
  */
-     public function borrowAction()
+     public function borrowAction(Request $request)
     {
 
-        
-        return $this->render('ProjectFilmsBundle:Default:borrow.html.twig', array());
-    }
+        $refleksja = new Orders();
+        $refleksja->setClientname($this->getUser()->getUsername());
+        $form = $this->createForm(new OrdersType(), $refleksja);
+        if ($request->isMethod('POST')
+                && $form->handleRequest($request)
+                && $form->isValid()
+                ) {
+                        $em = $this->getDoctrine()->getManager();
+                        $em->persist($refleksja);
+                        $em->flush();
+
+   
+
+                         return $this->redirect($this->generateUrl('home', array()));
+                }
+        return $this->render('ProjectFilmsBundle:Default:borrow.html.twig',  array('form' => $form->createView()));
+    
+       
+    
 }
 
+
+public function listorderAction()
+{
+
+
+
+
+$em = $this->getDoctrine()->getManager();
+         $refleksjeRepository = $em->getRepository("ProjectFilmsBundle:Orders");
+      $refleksja = $refleksjeRepository->findAll();
+
+   
+        return $this->render('ProjectFilmsBundle:Default:listorder.html.twig', array('orders' => $refleksja));
+    
+
+}
+
+
+
+/**
+ * bird film action.
+ * @Route("/bird" , name="bird" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:bird.html.twig")
+ */
+     public function birdAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:bird.html.twig', array());
+    }
+
+/**
+ * div film action.
+ * @Route("/div" , name="div" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:div.html.twig")
+ */
+     public function divAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:div.html.twig', array());
+    }
+
+/**
+ * edge film action.
+ * @Route("/edge" , name="edge" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:edge.html.twig")
+ */
+     public function edgeAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:edge.html.twig', array());
+    }
+
+
+/**
+ * gone film action.
+ * @Route("/gone" , name="gone" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:gone.html.twig")
+ */
+     public function goneAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:gone.html.twig', array());
+    }
+
+/**
+ * gurd film action.
+ * @Route("/gurd " , name="gurd" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:gurd.html.twig")
+ */
+     public function gurdAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:gurd.html.twig', array());
+    }
+
+/**
+ * hung film action.
+ * @Route("/hung " , name="hung" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:hung.html.twig")
+ */
+     public function hungAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:hung.html.twig', array());
+    }
+
+    /**
+ * int film action.
+ * @Route("/int " , name="int" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:int.html.twig")
+ */
+     public function intAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:int.html.twig', array());
+    }
+       /**
+ * jur film action.
+ * @Route("/jur " , name="jur" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:jur.html.twig")
+ */
+     public function jurAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:jur.html.twig', array());
+    }
+
+           /**
+ * king film action.
+ * @Route("/king " , name="king" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:king.html.twig")
+ */
+     public function kingAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:king.html.twig', array());
+    }
+
+               /**
+ * luce film action.
+ * @Route("/luce " , name="luce" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:luce.html.twig")
+ */
+     public function luceAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:luce.html.twig', array());
+    }
+
+              /**
+ * maze film action.
+ * @Route("/maze " , name="maze" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:maze.html.twig")
+ */
+     public function mazeAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:maze.html.twig', array());
+    }
+
+
+}
