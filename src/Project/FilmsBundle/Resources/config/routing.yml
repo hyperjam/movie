@@ -117,3 +117,7 @@ project_films_luce:
 project_films_maze:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation
+
+project_films_show:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation

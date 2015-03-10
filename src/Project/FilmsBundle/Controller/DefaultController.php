@@ -299,39 +299,6 @@ public function reviewAction(Request $request){
 
         $refleksja = new Orders();
         $refleksja->setClientname($this->getUser()->getUsername());
-        
-
-// $refleksj = new Client();
-//         $refleksj->getEmail($this->getUser()->getEmail());
-
-//         $url = 'https://mandrillapp.com/api/1.0/messages/send.json';
-// $params = [
-// 'message' => array(
-// 'subject' => 'You have made an order',
-// 'text' => 'ggg',
-// 'html' => '<p> ffgg</p>',
-// 'from_email' => 'annahyperjam@gmail.com ',
-// 'to' => array(
-// array(
-// 'email' => $refleksj,
-// 'name' => ''
-// )
-// )
-// )
-// ];
-// $params['key'] = 'q3_8uQMzxF2IlP53NU3-5A';
-// $params = json_encode($params);
-// $ch = curl_init();
-// curl_setopt($ch, CURLOPT_URL, $url);
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:
-// application/json'));
-// curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-// $head = curl_exec($ch);
-// $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-// curl_close($ch);
-
-
-
         $form = $this->createForm(new OrdersType(), $refleksja);
         if ($request->isMethod('POST')
                 && $form->handleRequest($request)
@@ -355,21 +322,47 @@ public function reviewAction(Request $request){
 public function listorderAction()
 {
 
-$usr= $this->get('security.context')->getToken()->getUser();
-$usr->getEmail();
+ //$usr= $this->get('security.context')->getToken()->getUser();
+// $usr->getUsername();
 
 
-$em = $this->getDoctrine()->getManager();
-         $refleksjeRepository = $em->getRepository("ProjectFilmsBundle:Orders");
-      $refleksja = $refleksjeRepository->findAll();
+// // $username = $this->getUser()->getUsername();
 
-   
-        return $this->render('ProjectFilmsBundle:Default:listorder.html.twig', array('orders' => $refleksja));
+
+         $em = $this->getDoctrine()->getManager();
+       $refleksjeRepository = $em->getRepository("ProjectFilmsBundle:Orders");
+        $refleksja = $refleksjeRepository->findAll();
+//         $refleksja = $refleksjeRepository->findOneBy(array('clientname' => $usr));
+
+
+
+   return $this->render('ProjectFilmsBundle:Default:listorder.html.twig', array('orders' => $refleksja));
     
 
 }
 
+ /**
+     * @Route("/show/{clientname}", name="show")
+     * @Template()
+     */
+    public function showAction($clientname)
+    {
+        $session = $this->getRequest()->getSession();
+        $clientname= $this->get('security.context')->getToken()->getUser();
+        $clientname = $this->getUser()->getUsername();
 
+
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('ProjectFilmsBundle:Orders')->findByClientname($clientname);
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Clients order .');
+        }
+       
+        return $this->render('ProjectFilmsBundle:Default:show.html.twig', array(
+            'entity'      => $entity,
+        ));
+    }
 
 /**
  * bird film action.

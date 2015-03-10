@@ -57,8 +57,9 @@
         <li><a href="" class="active"><span class="glyphicon glyphicon-user"></span>
             {{ app.user.username }}
                  {% endif %}</a></li> 
-       <li><a href=""><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
-       <li><a href="{{path ('project_films_listorder')}}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  
+                 <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/"><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
+       <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/show/{{ app.user.username }}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>
+      <!--  <li><a href="{{path ('project_films_listorder')}}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  --> 
         <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 
         {% else %}
 

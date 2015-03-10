@@ -90,7 +90,7 @@ function goBack() {
          </div>  
 
                    
-            <div class="col-md-7">
+            <div class="col-md-12">
                  <h3 class="dark-grey">Your orders, {{ app.user.username }}</h3>
                 
                    <table class="table table-striped">
@@ -109,7 +109,6 @@ function goBack() {
  {% for refleksja in orders %}
       <tr>
         <td>{{ refleksja.order_id }}</td>
-        
         <td>{{ refleksja.clientname}}</td>
         <td>{{ refleksja.paymentform}}</td>
         <td>{{ refleksja.titlet}}</td>
@@ -123,7 +122,40 @@ function goBack() {
   </tbody>
 </table>
                 
-                              
+
+<div class="well">
+
+                    <div >
+                      <h2 class="lead">Select film to watch <h2>
+                        
+                     
+                     </div> 
+                    </div>                
+                    <hr>
+                    {% for refleksja in orders %}
+                    <div class="row">
+                        <div class="col-md-12">
+                          <h4>Client: {{ refleksja.clientname}}</h4>
+                            
+                            <span class="pull-right">Film: {{ refleksja.titlet}}</span>
+                            <p>Payment form:  {{ refleksja.paymentform}}</p>
+                            <p>Date of payment:  {{ refleksja.dateofpay|date("m/d/Y") }}</p>
+                            <a class="btn btn-success" onClick= "alert ('You will start watch movie now');">Watch</a>
+                        </div>
+                    </div>
+                   
+                    <hr>
+                    {% endfor %}   
+</div>
+
+<!-- <p>Please select film you would like to watch: </p>
+
+          {% for refleksja in orders %}
+
+
+      <input type="radio" name="orders" value="{{ refleksja.titlet}}"> <br>
+
+  {% endfor %}    -->                  
             
             </div>
         
