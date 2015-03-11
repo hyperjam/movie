@@ -121,3 +121,15 @@ project_films_maze:
 project_films_show:
     resource: "@ProjectFilmsBundle/Controller"
     type:     annotation
+
+project_films_about:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_watch:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation
+
+project_films_online:
+    resource: "@ProjectFilmsBundle/Controller"
+    type:     annotation

@@ -31,6 +31,11 @@
     }
     
 }
+
+.alert {
+   height:10%;   
+   width:80%; 
+}
 </style>
 
  </head>
@@ -57,20 +62,6 @@
         </div>
     </nav>
 
-<script>
-function goBack() {
-   window.history.back()
-}
-
-
-    </script>
-
-    <script>
-    function goB() {
-   alert("Your review was succesfully added. Check list of reviews to read other users opinions on films!");
-   history.back();
- }
-</script>
 
 <div class="container-fluid">
     <section class="container">
@@ -78,7 +69,10 @@ function goBack() {
                    
             <div class="col-md-12">
                  <h3 class="dark-grey text-center">Your orders, {{ app.user.username }}</h3>
-                
+              
+                  <br/>
+
+<br/>
                    <table class="table table-striped">
   <thead>
     <tr>
@@ -86,7 +80,8 @@ function goBack() {
       <th>CLIENTNAME</th>
       <th>FORM OF PAYMENT</th>
       <th>FILM</th>
-      <th>DATE OF PAYMENT</th>
+      <th>DATE OF PAYMENT (m/d/y)</th>
+      <th>STATUS</th>
     </tr>
   </thead>
   <tbody>
@@ -99,15 +94,35 @@ function goBack() {
         <td>{{ entity.paymentform}}</td>
         <td>{{ entity.titlet}}</td>
         <td>{{ entity.dateofpay|date("m/d/Y") }}</td>
-        
+        <td>
+<!-- {% set difference = date(entity.dateofpay).diff(date("now")) %}
+{% set leftDays = difference.days %}
+{% if leftDays > 30%}
+  In Progress
+{% else %}
+  Paid
+{% endif %} -->
+{% if "now"|date('Y-m-d') >= entity.dateofpay|date('Y-m-d') %}
+    <div class="alert alert-success" role="alert">Paid</div>
+    
+    {% else %}
+   <div class="alert alert-warning" role="alert">In Progress</div> 
+{% endif %}
+
+
+        </td>
         <td>
          
+
+
         </td>
-      </tr>
+      </tr> 
+      
   {% endfor %} 
   </tbody>
 </table>
-                
+          
+
 
 <!-- <div class="well">
 
@@ -115,6 +130,9 @@ function goBack() {
             
             
             </div>
+ <div class="col-md-0">
+<span class="glyphicon glyphicon-exclamation-sign"></span> In progress: A payment is underway. Once the payment has been completed on the date which you select, it'll show as Paid. The Paid status gives you the right to watch ordered film in the section "Watch my films"
+</div>
 <br/>
             <div class="col-md-0">
              <h3 class="dark-grey text-center">Terms and conditions of payment</h3>

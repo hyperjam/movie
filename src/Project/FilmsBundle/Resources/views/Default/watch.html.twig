@@ -1,0 +1,138 @@
+
+
+<!DOCTYPE html>
+
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title> BorrowingFilmOnline</title>
+   
+   {% block stylesheets %} 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/bootstrap-theme.min.css')  }} " rel="stylesheet" /> 
+   <link href=  "{{asset ('bundles/projectfilms/css/heroic-features.css')  }} " rel="stylesheet" />
+   <link href=  "{{asset ('bundles/projectfilms/css/shop-homepage.css')  }} " rel="stylesheet" />
+   {% endblock %}
+<style>
+.jumbotron {
+     padding: 0.4em 0.2em;
+     
+     color: black;
+     background-color: #adebad ;
+     
+     
+    p {
+        font-size: 1.2em;
+        font-weight: 200;
+        font-weight: lighter;
+        .btn {
+            padding: 0.2em;
+        }
+    }
+    
+}
+</style>
+
+ </head>
+
+<body>
+<div>
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{path ('home')}}"> Back</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+            </div>
+        </div>
+    </nav>
+
+<script>
+function redirect() {
+  window.location.replace("http://v-ie.uek.krakow.pl/~s175517/app_dev.php/online");
+  return false;
+}
+</script>
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">  
+<div class="well">
+
+                    <div >
+                      <h2 class="lead">Select film to watch, {{ app.user.username }} <h2>
+                        
+                     
+                     </div> 
+                    </div>                
+                    <hr>
+                    {% for entity in entity  %}
+                    <div class="row">
+                        <div class="col-md-12">
+                          <p>Client: {{ entity.clientname}}</p>
+                            
+                            <span class="pull-right">Film: {{ entity.titlet}}</span>
+                            <p>Payment form: {{ entity.paymentform}}</p>
+                            
+                            <p> {% if "now"|date('Y-m-d') >= entity.dateofpay|date('Y-m-d') %}
+   <p>Date of payment:  {{ entity.dateofpay|date("m/d/Y") }}</p>                           
+   Status:  Paid   
+   <form name="form1" id="form1" method="post" onsubmit="return redirect()">  
+   <span class="pull-right"><input type="submit" class="btn btn-success" name="order" id="order" value="Watch" onClick= "alert ('You will start watch movie now');" ></span>
+
+   <!-- <a class="btn btn-success" onClick= "alert ('You will start watch movie now');" onSubmit="{{path ('online')}}" >Watch</a></span> -->
+
+   </form>
+    {% else %}
+  Unfortunatelly you cannot watch this film unless you pay. Browse your orders to get more information
+                    <span class="pull-right"> <a class="btn btn-primary" href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/show/{{ app.user.username }}">My orders </a></span>
+
+{% endif %}</p>
+                            
+                        </div>
+                    </div>
+                   
+                    <hr>
+                    {% endfor %}   
+</div>
+            
+        </div>
+
+    </section>
+    
+</div>
+
+
+
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12" style="position:absolute;
+   bottom:0;">
+                <!--  <p style="position:absolute;
+   bottom:0;">Copyright &copy; 2015</p> -->
+                </div>
+            </div>
+        </footer>
+    </div>  <!-- /.container -->
+ <hr>
+           
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    
+</body>
+</html>

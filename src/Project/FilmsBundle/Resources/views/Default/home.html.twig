@@ -54,10 +54,10 @@
       <ul class="nav navbar-nav navbar-right">
         {% if is_granted('ROLE_USER') %}
             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <li><a href="" class="active"><span class="glyphicon glyphicon-user"></span>
+        <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/about/{{ app.user.username }}" class="active"><span class="glyphicon glyphicon-user"></span>
             {{ app.user.username }}
                  {% endif %}</a></li> 
-                 <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/"><span class="glyphicon glyphicon-list"></span> List of borrowed</a></li>
+                 <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/watch/{{ app.user.username }}"><span class="glyphicon glyphicon-film"></span> Watch my films</a></li>
        <li><a href="http://v-ie.uek.krakow.pl/~s175517/app_dev.php/show/{{ app.user.username }}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>
       <!--  <li><a href="{{path ('project_films_listorder')}}"><span class="glyphicon glyphicon-list"></span> List of orders</a></li>  --> 
         <li><a href="{{path ('logout')}}"><span class="glyphicon glyphicon-log-out"></span> Log-out</a></li> 

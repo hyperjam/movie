@@ -365,6 +365,64 @@ public function listorderAction()
     }
 
 /**
+     * @Route("/about/{clientname}", name="about")
+     * @Template()
+     */
+
+ public function aboutAction($clientname)
+    {
+        $session = $this->getRequest()->getSession();
+        $clientname= $this->get('security.context')->getToken()->getUser();
+        $clientname = $this->getUser()->getUsername();
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('ProjectFilmsBundle:Client')->findByUsername($clientname);
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Clients order .');
+        }
+       
+        return $this->render('ProjectFilmsBundle:Default:about.html.twig', array(
+            'entity'      => $entity,
+        ));
+    }
+
+/**
+     * @Route("/watch/{clientname}", name="watch")
+     * @Template()
+     */
+     public function watchAction($clientname)
+    {
+       $session = $this->getRequest()->getSession();
+        $clientname= $this->get('security.context')->getToken()->getUser();
+        $clientname = $this->getUser()->getUsername();
+
+
+
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('ProjectFilmsBundle:Orders')->findByClientname($clientname);
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Clients order .');
+        }
+       
+        return $this->render('ProjectFilmsBundle:Default:watch.html.twig', array(
+            'entity'      => $entity,
+        ));
+    }
+
+  /**
+ * online film action.
+ * @Route("/online" , name="online" )
+ * @Method({"GET", "POST"})
+ * @Template("ProjectFilmsBundle:Default:online.html.twig")
+ */
+     public function onlineAction()
+    {
+        return $this->render('ProjectFilmsBundle:Default:online.html.twig', array());
+    }
+
+/**
  * bird film action.
  * @Route("/bird" , name="bird" )
  * @Method({"GET", "POST"})
